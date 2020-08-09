@@ -1,15 +1,20 @@
 .grid-wrapper{
-  overflow: scroll;
+  white-space: nowrap;
+  min-width: 90;
 }
 
-.column{
-  float: left;
-  background: #F7F7EF;
+.column,
+.column-features{
+  display: inline-block;
+  background: white;
   margin-right: .3rem;
 }
 
+.row{
+  background: #F7F7EF
+}
 .plans{
-  font-size:1.2rem;
+  font-size:1.1rem;
   text-align: center;
   border-radius: .3rem;
   padding: 1rem;
@@ -24,11 +29,6 @@ background: rgb(230,230,230);
 }
 
 
-.row,
-.row-grey{
-  font-weight: 900;
-}
-
 
 .row,
 .row-grey{
@@ -36,6 +36,8 @@ background: rgb(230,230,230);
   border-left: .3rem solid white;
   border-right: .3rem solid white;
   font-size: .9rem;
+  font-weight: 900;
+
 
 }
 
@@ -44,3 +46,21 @@ background: rgb(230,230,230);
   font-weight: 100;
 }
 
+/*@media screen and (min-width: 1200px) {
+    body {
+        color: red;
+    }
+}*/
+
+.column:hover > .minus{
+  opacity: 10%;
+
+}
+
+.minus{
+  opacity: 0%;
+}
+
+.minus:hover{
+  opacity: 100% !important;
+}
