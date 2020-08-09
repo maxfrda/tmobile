@@ -1,5 +1,6 @@
 .grid-wrapper{
   white-space: nowrap;
+  min-width: 90;
 }
 
 .column{
@@ -24,11 +25,6 @@ background: rgb(230,230,230);
 }
 
 
-.row,
-.row-grey{
-  font-weight: 900;
-}
-
 
 .row,
 .row-grey{
@@ -36,6 +32,8 @@ background: rgb(230,230,230);
   border-left: .3rem solid white;
   border-right: .3rem solid white;
   font-size: .9rem;
+  font-weight: 900;
+
 
 }
 
@@ -44,3 +42,16 @@ background: rgb(230,230,230);
   font-weight: 100;
 }
 
+/*@media screen and (min-width: 1200px) {
+    body {
+        color: red;
+    }
+}*/
+
+.column.two:hover{
+  transform: scale(1.05);
+}
+
+.minus{
+  background-color: white;
+}
