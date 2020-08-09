@@ -1,6 +1,7 @@
 .grid-wrapper{
   white-space: nowrap;
   min-width: 90;
+
 }
 
 .column,
@@ -14,7 +15,7 @@
   background: #F7F7EF
 }
 .plans{
-  font-size:1.1rem;
+  font-size:.9rem;
   text-align: center;
   border-radius: .3rem;
   padding: 1rem;
@@ -35,7 +36,7 @@ background: rgb(230,230,230);
   padding: .8rem;
   border-left: .3rem solid white;
   border-right: .3rem solid white;
-  font-size: .9rem;
+  font-size: .75rem;
   font-weight: 900;
 
 
@@ -46,11 +47,15 @@ background: rgb(230,230,230);
   font-weight: 100;
 }
 
-/*@media screen and (min-width: 1200px) {
-    body {
-        color: red;
-    }
-}*/
+@media screen and (max-width: 1400px) {
+   .row,
+   .row-grey{
+    font-size: 1.3rem;
+   }
+   .plans{
+    font-size: 1.8rem;
+   }
+}
 
 .column:hover > .minus{
   opacity: 10%;
@@ -63,4 +68,23 @@ background: rgb(230,230,230);
 
 .minus:hover{
   opacity: 100% !important;
+}
+
+.plus-container{
+  display: inline-block;
+  position: absolute;
+  height: 100%;
+  margin-left:1rem;
+  margin-bottom: 2em;
+}
+
+.plus:hover{
+  opacity: 100%;
+  transform: scale(1.2);
+}
+
+.plus{
+  margin-right: 5rem;
+  margin-top: 12rem;
+  opacity: 10%;
 }
