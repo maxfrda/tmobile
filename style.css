@@ -3,12 +3,16 @@
   min-width: 90;
 }
 
-.column{
+.column,
+.column-features{
   display: inline-block;
-  background: #F7F7EF;
+  background: white;
   margin-right: .3rem;
 }
 
+.row{
+  background: #F7F7EF
+}
 .plans{
   font-size:1.1rem;
   text-align: center;
@@ -48,10 +52,15 @@ background: rgb(230,230,230);
     }
 }*/
 
-.column.two:hover{
-  transform: scale(1.05);
+.column:hover > .minus{
+  opacity: 10%;
+
 }
 
 .minus{
-  background-color: white;
+  opacity: 0%;
+}
+
+.minus:hover{
+  opacity: 100% !important;
 }
