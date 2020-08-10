@@ -1,6 +1,5 @@
 .grid-wrapper{
   white-space: nowrap;
-  min-width: 90;
 
 }
 
@@ -12,7 +11,7 @@
 }
 
 .row{
-  background: #F7F7EF
+  background: #F7F7EF;
 }
 .plans{
   font-size:.9rem;
@@ -47,16 +46,16 @@ background: rgb(230,230,230);
   font-weight: 100;
 }
 
-@media screen and (max-width: 1400px) {
+/*@media screen and (max-width: 1400px) {
    .row,
    .row-grey{
-    font-size: 1.3rem;
+    font-size: 1rem;
    }
    .plans{
-    font-size: 1.8rem;
+    font-size: 1.5rem;
    }
 }
-
+*/
 .column:hover > .minus{
   opacity: 10%;
 
@@ -93,11 +92,6 @@ background: rgb(230,230,230);
   display: block;
 }
 
-.fas.fa-plus{
-  vertical-align: top;
-  display: inline-block;
-}
-
 .add{
   display: inline-block;
   vertical-align: top;
@@ -107,5 +101,40 @@ background: rgb(230,230,230);
 }
 
 .add:hover{
+  opacity: 100%;
+}
+
+.column.more-plans{
+  display: inline-block;
+}
+
+.more{
+  background: #F7F7EF;;
+}
+
+.extra-plans{
+  font-size:.9rem;
+  text-align: center;
+  padding: 1rem;
+  border: .05rem solid white;
+  color: white;
+  font-weight: 600;
+  background: #E21673;
+}
+
+.extra-plans:hover{
+  transform: scale(1.1);
+}
+
+
+
+.fas.fa-plus-circle{
+  padding-top: 1rem;
+  padding-right: .3rem;
+  opacity: 0%;
+
+}
+
+.fas.fa-plus-circle:hover{
   opacity: 100%;
 }
