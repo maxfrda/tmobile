@@ -8,20 +8,23 @@
   display: inline-block;
   background: white;
   margin-right: .3rem;
+
 }
 
 .row{
   background: #F7F7EF;
+  border: .05rem solid white;
+
 }
 .plans{
   font-size:.9rem;
   text-align: center;
   border-radius: .3rem;
   padding: 1rem;
-  border: .05rem solid white;
   color: white;
   font-weight: 600;
   background: #E21673;
+
 }
 
 .row-grey{
@@ -37,6 +40,8 @@ background: rgb(230,230,230);
   border-right: .3rem solid white;
   font-size: .75rem;
   font-weight: 900;
+  border: .05rem solid white;
+
 
 
 }
@@ -120,10 +125,14 @@ background: rgb(230,230,230);
   color: white;
   font-weight: 600;
   background: #E21673;
+
+
 }
 
 .extra-plans:hover{
   transform: scale(1.1);
+  box-shadow: 2px 0px 17px 1px rgba(247,163,202,1);
+
 }
 
 
