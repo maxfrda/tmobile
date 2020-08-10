@@ -70,21 +70,42 @@ background: rgb(230,230,230);
   opacity: 100% !important;
 }
 
-.plus-container{
+.dropdown {
+  position: relative;
   display: inline-block;
+}
+
+/* line 6, /home/max/code/maxfrda/diary/app/assets/stylesheets/_dropdown.scss */
+.dropdown-child {
+  display: none;
+  background-color: white;
+  min-width: 150px;
   position: absolute;
-  height: 100%;
-  margin-left:1rem;
-  margin-bottom: 2em;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+  z-index: 2;
 }
 
-.plus:hover{
+/* line 15, /home/max/code/maxfrda/diary/app/assets/stylesheets/_dropdown.scss */
+.dropdown-item {
+  color: black;
+  padding: 10px;
+  text-decoration: none;
+  display: block;
+}
+
+.fas.fa-plus{
+  vertical-align: top;
+  display: inline-block;
+}
+
+.add{
+  display: inline-block;
+  vertical-align: top;
+  opacity: 30%;
+  margin-left: 2rem;
+  margin-top: 1rem;
+}
+
+.add:hover{
   opacity: 100%;
-  transform: scale(1.2);
-}
-
-.plus{
-  margin-right: 5rem;
-  margin-top: 12rem;
-  opacity: 10%;
 }
