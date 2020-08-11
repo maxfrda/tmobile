@@ -1,3 +1,4 @@
+
 .grid-wrapper{
   white-space: nowrap;
 
@@ -111,6 +112,7 @@ background: rgb(230,230,230);
 
 .column.more-plans{
   display: inline-block;
+  vertical-align: top;
 }
 
 .more{
@@ -120,18 +122,21 @@ background: rgb(230,230,230);
 .extra-plans{
   font-size:.9rem;
   text-align: center;
-  padding: 1rem;
+  padding: .5rem;
   border: .05rem solid white;
   color: white;
   font-weight: 600;
   background: #E21673;
   border-radius: .3rem;
+  display: block;
 
+}
+#extras-dropdown{
+  display: none;
 }
 
 .extra-plans:hover{
   transform: scale(1.1);
-  box-shadow: 2px 0px 17px 1px rgba(247,163,202,1);
 
 }
 
@@ -146,4 +151,29 @@ background: rgb(230,230,230);
 
 .fas.fa-plus-circle:hover{
   opacity: 100%;
+}
+
+.fa-plus{
+  color: #E21673;
+  margin-left: 1rem;
+  opacity: 30%;
+  transform: scale(.8);
+  padding: top: 1rem;
+}
+
+.fa-plus:hover{
+  transform: scale(.9);
+  opacity: 100%;
+}
+
+.fa-minus{
+  color: #E21673;
+  margin-left: 1rem;
+  transform: scale(.8);
+  padding: top: 1rem;
+}
+
+.fa-minus:hover{
+  transform: scale(.75);
+
 }
