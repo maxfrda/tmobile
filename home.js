@@ -10,13 +10,12 @@ class Plan {
   }
   // Getter
 
-  get listener() {
-    const button = this.findButton();
+  get button() {
+    return this.findButton();
+  }
 
-    button.addEventListener('click', () => {
-      const column = this.findColumn();
-      column.style.display = 'inline-block';
-    });
+  get column() {
+    return this.findColumn();
   }
 
   // Method
@@ -30,16 +29,24 @@ class Plan {
   }
 }
 
-const firResPlus = new Plan(11);
-firResPlus.listener;
+function planListener(btn, col) {
+  const button = btn;
 
-function setListeners(item) {
+  button.addEventListener('click', () => {
+    const column = col;
+    column.style.display = 'inline-block';
+    button.style.display = 'none';
+    flipPlans(dropdown);
+  });
+}
+
+function minusListener(item) {
   item.addEventListener('click', () => {
     const icon = item;
     icon.parentNode.style.display = 'none';
   });
 }
-[...icons].forEach(setListeners);
+[...icons].forEach(minusListener);
 
 plusMinus.addEventListener('click', () => {
   flipPlans(dropdown);
@@ -55,3 +62,7 @@ function flipPlans(item) {
     plusMinus.innerHTML = plus;
   }
 }
+
+const firResPlus = new Plan(11);
+console.log(firResPlus.button);
+planListener(firResPlus.button, firResPlus.column);
