@@ -1,33 +1,10 @@
+import firResPlus from './data.js';
+
 const icons = document.getElementsByClassName('minus');
 const dropdown = document.getElementById('extras-dropdown');
 const plusMinus = document.getElementById('plus-minus');
 const minus = '<i class="fas fa-minus fa-2x"></i>';
 const plus = '<i class="fas fa-plus fa-2x"></i>';
-
-class Plan {
-  constructor(number) {
-    this.number = number;
-  }
-  // Getter
-
-  get button() {
-    return this.findButton();
-  }
-
-  get column() {
-    return this.findColumn();
-  }
-
-  // Method
-
-  findButton() {
-    return document.getElementById(`col-${this.number}-btn`);
-  }
-
-  findColumn() {
-    return document.getElementById(`col-${this.number}`);
-  }
-}
 
 function planListener(btn, col) {
   const button = btn;
@@ -63,6 +40,10 @@ function flipPlans(item) {
   }
 }
 
-const firResPlus = new Plan(11);
-console.log(firResPlus.button);
 planListener(firResPlus.button, firResPlus.column);
+
+function showPrices(number) {
+  firResPlus.row.innerHTML = firResPlus.prices[`line${number}`];
+}
+
+showPrices(2);
