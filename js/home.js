@@ -1,14 +1,13 @@
 import plans from './data.js';
 
-const icons = document.getElementsByClassName('minus');
 const dropdown = document.getElementById('extras-dropdown');
 const plusMinus = document.getElementById('plus-minus');
 const minus = '<i class="fas fa-minus fa-2x"></i>';
 const plus = '<i class="fas fa-plus fa-2x"></i>';
 
-function planListener(btn, col) {
+function planListener(btn, col, min) {
   const button = btn;
-
+  minusListener(min, button);
   button.addEventListener('click', () => {
     const column = col;
     column.style.display = 'inline-block';
@@ -18,13 +17,13 @@ function planListener(btn, col) {
   });
 }
 
-function minusListener(item) {
+function minusListener(item, button) {
   item.addEventListener('click', () => {
     const icon = item;
     icon.parentNode.style.display = 'none';
+    flipElement(button);
   });
 }
-[...icons].forEach(minusListener);
 
 plusMinus.addEventListener('click', () => {
   flipElement(dropdown);
@@ -38,7 +37,6 @@ function flipElement(item) {
   } else {
     element.style.display = 'none';
   }
-
 }
 
 function flipPlus() {
@@ -54,7 +52,18 @@ function showPrices(number, plan) {
   p.row.innerHTML = p.prices[`line${number}`];
 }
 
+function sanitise(data) {
+  const prices = data;
+  Object.keys(prices).forEach((v) => {
+    if (isNaN(prices[v])) {
+      prices[v] = 'N/A';
+    }
+    return prices;
+  });
+}
+
 plans.forEach((plan) => {
-  planListener(plan.button, plan.column);
+  let prices = sanitise(plan.prices);
+  planListener(plan.button, plan.column, plan.minus);
   showPrices(1, plan);
 });

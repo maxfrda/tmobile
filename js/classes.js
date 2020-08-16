@@ -22,6 +22,10 @@ class Plan {
     return this.calcPrices();
   }
 
+  get minus() {
+    return this.findMinus();
+  }
+
   // Method
   findRow() {
     return document.getElementById(`price-${this.number}`);
@@ -33,6 +37,10 @@ class Plan {
 
   findColumn() {
     return document.getElementById(`col-${this.number}`);
+  }
+
+  findMinus() {
+    return document.getElementById(`minus-${this.number}`);
   }
 
   calcPrices() {
