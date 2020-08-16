@@ -62,6 +62,8 @@ function sanitise(data) {
   });
 }
 
+document.querySelector('#input').value = 1;
+
 plans.forEach((plan) => {
   let prices = sanitise(plan.prices);
   planListener(plan.button, plan.column, plan.minus);
