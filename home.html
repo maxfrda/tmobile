@@ -10,6 +10,9 @@
 <body>
   <div class="grid-wrapper">
     <div class="column-features">
+      <div class="minus" style="visibility: hidden;">
+        <i class="fas fa-minus-circle fa-md"></i>
+      </div>
       <div class="plans">Awesome Features</div>
       <div class="row-grey">Unlimited Voice & Text</div>
       <div class="row">Unlimited Data</div>
@@ -22,14 +25,9 @@
       <div class="row-grey">Name ID & VTT</div>
       <div class="row">Min-Max</div>
       <div class="row-grey">
-        <label for="price">
-          <button class='calculate'>Calculate</button>
-          <input type="text" name="Price" size="2" id="input">
-          Line(s)
-        </label>
+        <button class='calculate'>Calculate</button>
+        <input type="text" name="Price" size="1" id="input">
       </div>
-
-
     </div>
 
     <div class="column" id="col-2">
@@ -48,9 +46,8 @@
       <div class="row-grey removable">No</div>
       <div class="row removable">1-12 lines/account</div>
       <div class="row-grey removable bottom">
-        <p id="price-2"></p>
-        <p id="price-2-autopay"></p>
-
+        <p class="prices" id="price-2-autopay"></p>
+        <p class="prices" id="price-2"></p>
       </div>
 
     </div>
@@ -70,7 +67,10 @@
       <div class="row removable">Unlimited</div>
       <div class="row-grey removable">Yes</div>
       <div class="row removable">1-12 lines/account</div>
-      <div class="row-grey removable bottom" id="price-3">0</div>
+       <div class="row-grey removable bottom">
+        <p class="prices" id="price-3-autopay"></p>
+        <p class="prices" id="price-3"></p>
+      </div>
 
 
     </div>
@@ -90,7 +90,10 @@
       <div class="row removable">No</div>
       <div class="row-grey removable">No</div>
       <div class="row removable">1-6 lines/account</div>
-      <div class="row-grey removable bottom" id="price-4">0</div>
+      <div class="row-grey removable bottom">
+        <p class="prices" id="price-4-autopay"></p>
+        <p class="prices" id="price-4"></p>
+      </div>
 
 
 
@@ -111,7 +114,10 @@
       <div class="row removable">No</div>
       <div class="row-grey removable">No</div>
       <div class="row removable">1-2 lines/account</div>
-      <div class="row-grey removable bottom" id="price-5">0</div>
+      <div class="row-grey removable bottom">
+        <p class="prices" id="price-5-autopay"></p>
+        <p class="prices" id="price-5"></p>
+      </div>
 
 
 
@@ -132,7 +138,10 @@
       <div class="row removable">1 Hour</div>
       <div class="row-grey removable">No</div>
       <div class="row removable">1-2 lines/account</div>
-      <div class="row-grey removable bottom" id="price-6">0</div>
+      <div class="row-grey removable bottom">
+        <p class="prices" id="price-6-autopay"></p>
+        <p class="prices" id="price-6"></p>
+      </div>
 
 
     </div>
@@ -153,7 +162,10 @@
       <div class="row removable">1 Hour</div>
       <div class="row-grey removable">No</div>
       <div class="row removable">1-12 lines/account</div>
-      <div class="row-grey removable bottom" id="price-7">0</div>
+      <div class="row-grey removable bottom">
+        <p class="prices" id="price-7-autopay"></p>
+        <p class="prices" id="price-7"></p>
+      </div>
 
 
     </div>
@@ -173,7 +185,10 @@
       <div class="row removable">Unlimited</div>
       <div class="row-grey removable">Yes</div>
       <div class="row removable">2-12 lines/account</div>
-      <div class="row-grey removable bottom" id="price-8"></div>
+      <div class="row-grey removable bottom">
+        <p class="prices" id="price-8-autopay"></p>
+        <p class="prices" id="price-8"></p>
+      </div>
 
 
     </div>
@@ -194,7 +209,10 @@
       <div class="row removable">No</div>
       <div class="row-grey removable">No</div>
       <div class="row removable">4-6 lines/account</div>
-      <div class="row-grey removable bottom" id="price-9">0</div>
+      <div class="row-grey removable bottom">
+        <p class="prices" id="price-9-autopay"></p>
+        <p class="prices" id="price-9"></p>
+      </div>
 
 
     </div>
@@ -214,7 +232,10 @@
       <div class="row removable">1 Hour</div>
       <div class="row-grey removable">No</div>
       <div class="row removable">1-12 lines/account</div>
-      <div class="row-grey removable bottom" id="price-10">0</div>
+      <div class="row-grey removable bottom">
+        <p class="prices" id="price-10-autopay"></p>
+        <p class="prices" id="price-10"></p>
+      </div>
 
 
     </div>
@@ -235,7 +256,10 @@
       <div class="row removable">Unlimited</div>
       <div class="row-grey removable">Yes</div>
       <div class="row removable">2-12 lines/account</div>
-      <div class="row-grey removable bottom" id="price-11">0</div>
+      <div class="row-grey removable bottom">
+        <p class="prices" id="price-11-autopay"></p>
+        <p class="prices" id="price-11"></p>
+      </div>
 
     </div>
 
@@ -254,7 +278,10 @@
       <div class="row removable">Unlimited</div>
       <div class="row-grey removable">Yes</div>
       <div class="row removable">2 lines/account</div>
-      <div class="row-grey removable bottom" id="price-12">0</div>
+      <div class="row-grey removable bottom">
+        <p class="prices" id="price-12-autopay"></p>
+        <p class="prices" id="price-12"></p>
+      </div>
 
     </div>
 

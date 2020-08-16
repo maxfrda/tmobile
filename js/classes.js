@@ -10,6 +10,10 @@ class Plan {
     return this.findRow();
   }
 
+  get autoRow() {
+    return this.findAutoRow();
+  }
+
   get button() {
     return this.findButton();
   }
@@ -22,10 +26,6 @@ class Plan {
     return this.calcPrices();
   }
 
-  get autoPrices() {
-    return this.autoPrices();
-  }
-
   get minus() {
     return this.findMinus();
   }
@@ -33,6 +33,10 @@ class Plan {
 
   findRow() {
     return document.getElementById(`price-${this.number}`);
+  }
+
+  findAutoRow() {
+    return document.getElementById(`price-${this.number}-autopay`);
   }
 
   findButton() {
@@ -45,23 +49,6 @@ class Plan {
 
   findMinus() {
     return document.getElementById(`minus-${this.number}`);
-  }
-
-
-  calcAutoPrices() {
-    let discount = 5;
-    let i = 0;
-    const disPrice = this.calcPrices;
-    if (this.autopay === true) {
-      Object.keys(disPrice).forEach((v1) => {
-        disPrice[v] -= discount;
-        i += 1;
-        if (i <= 8) {
-          discount += 5;
-        }
-      });
-    }
-    return disPrice;
   }
 
   calcPrices() {

@@ -1,7 +1,6 @@
 
 .grid-wrapper{
   white-space: nowrap;
-
 }
 
 .column,
@@ -9,11 +8,10 @@
   display: inline-block;
   background: white;
   margin-right: .3rem;
+  vertical-align: top;
 
 }
-.column-features{
-  margin-top: 1rem;
-}
+
 
 .row{
   background: #F7F7EF;
@@ -187,9 +185,10 @@ background: rgb(230,230,230);
   color: white;
   font-weight: 600;
   border: none;
-  padding: .4rem;
-  font-size: .8rem;
-  margin-right: .3rem;
+  padding: .6rem;
+  /*margin-top: .5rem;*/
+  /*margin-right: 2rem;*/
+  margin: 0 auto;
 
 }
 
@@ -197,7 +196,16 @@ background: rgb(230,230,230);
   background: #E82279
 }
 
-.bottom{
-  padding: 1.1rem;
-  font-size: .9rem;
+.prices{
+  margin: .1rem;
+}
+
+#input{
+  font-size: .7rem;
+  text-align: center;
+  padding:.6rem;
+  border-radius: .2rem;
+  border: none;
+
+
 }

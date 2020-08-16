@@ -49,11 +49,22 @@ function flipPlus() {
 
 function showPrices(number, plan) {
   const p = plan;
+  let auto = 0;
   let value = p.prices[`line${number}`];
-  if (isNaN(value)) {
-    value = 'N/A';
+  if (number <= 8) {
+    auto = value - (5 * number);
+  } else if (number > 8) {
+    auto = value - 40;
+  } else {
+    auto = value;
   }
-  p.row.innerHTML = value;
+  if (isNaN(value)) {
+    p.row.innerHTML = 'N/A';
+    p.autoRow.innerHTML = 'N/A';
+  } else {
+    p.row.innerHTML = `$${value} Regular`;
+    p.autoRow.innerHTML = `$${auto} w/AutoPay`;
+  }
 }
 
 document.querySelector('#input').value = 1;
