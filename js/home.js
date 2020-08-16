@@ -1,16 +1,17 @@
 import plans from './data.js';
 
-const icons = document.getElementsByClassName('minus');
 const dropdown = document.getElementById('extras-dropdown');
 const plusMinus = document.getElementById('plus-minus');
 const minus = '<i class="fas fa-minus fa-2x"></i>';
 const plus = '<i class="fas fa-plus fa-2x"></i>';
+const calcButton = document.querySelector('.calculate');
 
-function planListener(btn, col) {
+function planListener(btn, col, min) {
   const button = btn;
-
+  minusListener(min, button);
   button.addEventListener('click', () => {
     const column = col;
+    col.parentNode.append(col);
     column.style.display = 'inline-block';
     button.style.display = 'none';
     flipElement(dropdown);
@@ -18,13 +19,13 @@ function planListener(btn, col) {
   });
 }
 
-function minusListener(item) {
+function minusListener(item, button) {
   item.addEventListener('click', () => {
     const icon = item;
     icon.parentNode.style.display = 'none';
+    flipElement(button);
   });
 }
-[...icons].forEach(minusListener);
 
 plusMinus.addEventListener('click', () => {
   flipElement(dropdown);
@@ -38,7 +39,6 @@ function flipElement(item) {
   } else {
     element.style.display = 'none';
   }
-
 }
 
 function flipPlus() {
@@ -51,10 +51,45 @@ function flipPlus() {
 
 function showPrices(number, plan) {
   const p = plan;
-  p.row.innerHTML = p.prices[`line${number}`];
+  let auto = 0;
+  let value = p.prices[`line${number}`];
+  if (number <= 8) {
+    auto = value - (5 * number);
+  } else if (number > 8) {
+    auto = value - 40;
+  } else {
+    auto = value;
+  }
+  if (isNaN(value)) {
+    p.row.innerHTML = '&nbsp;';
+    p.autoRow.innerHTML = 'N/A';
+  } else {
+    p.row.innerHTML = `$${value} Regular`;
+    p.autoRow.innerHTML = `$${auto} w/AutoPay`;
+  }
 }
 
+document.querySelector('#input').value = 1;
+
 plans.forEach((plan) => {
-  planListener(plan.button, plan.column);
+  planListener(plan.button, plan.column, plan.minus);
   showPrices(1, plan);
 });
+
+calcButton.addEventListener('click', () => {
+  const count = document.getElementById('input').value;
+  plans.forEach((plan) => {
+    showPrices(count, plan);
+  });
+});
+
+function calcEnter() {
+  document.addEventListener('keydown', logKey);
+  function logKey(e) {
+    if (e.code === 'Enter'){
+      calcButton.click();
+    }
+  }
+};
+
+calcEnter();

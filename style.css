@@ -1,7 +1,6 @@
 
 .grid-wrapper{
   white-space: nowrap;
-
 }
 
 .column,
@@ -9,8 +8,14 @@
   display: inline-block;
   background: white;
   margin-right: .3rem;
+  vertical-align: top;
 
 }
+
+.column-wrapper{
+  display: inline-block;
+}
+
 
 .row{
   background: #F7F7EF;
@@ -175,5 +180,37 @@ background: rgb(230,230,230);
 
 .fa-minus:hover{
   transform: scale(.75);
+
+}
+
+.calculate{
+  background: #E21673;
+  border-radius: .2rem;
+  color: white;
+  font-weight: 600;
+  border: none;
+  padding: .6rem;
+  /*margin-top: .5rem;*/
+  /*margin-right: 2rem;*/
+  margin: 0 auto;
+
+}
+
+.calculate:hover{
+  background: #E82279
+}
+
+.prices{
+  margin: .1rem;
+  font-weight: 600;
+}
+
+#input{
+  font-size: .7rem;
+  text-align: center;
+  padding:.6rem;
+  border-radius: .2rem;
+  border: none;
+
 
 }

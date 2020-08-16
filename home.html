@@ -9,231 +9,282 @@
 </head>
 <body>
   <div class="grid-wrapper">
-    <div class="column-features">
-      <div class="plans">Awesome Features</div>
-      <div class="row-grey">Unlimited Voice & Text</div>
-      <div class="row">Unlimited Data</div>
-      <div class="row-grey">Hotspot</div>
-      <div class="row">Video Quality</div>
-      <div class="row-grey">Taxes & Fees Included</div>
-      <div class="row">Mobile Without Borders</div>
-      <div class="row-grey">Simple Global</div>
-      <div class="row">Gogo In-Flight</div>
-      <div class="row-grey">Name ID & VTT</div>
-      <div class="row">Lines</div>
-
-
-    </div>
-
-    <div class="column" id="col-2">
-      <div class="minus">
-        <i class="fas fa-minus-circle fa-md"></i>
+    <div class="column-wrapper">
+      <div class="column-features">
+        <div class="minus" style="visibility: hidden;">
+          <i class="fas fa-minus-circle fa-md"></i>
+        </div>
+        <div class="plans">Awesome Features</div>
+        <div class="row-grey">Unlimited Voice & Text</div>
+        <div class="row">Unlimited Data</div>
+        <div class="row-grey">Hotspot</div>
+        <div class="row">Video Quality</div>
+        <div class="row-grey">Taxes & Fees Included</div>
+        <div class="row">Mobile Without Borders</div>
+        <div class="row-grey">Simple Global</div>
+        <div class="row">Gogo In-Flight</div>
+        <div class="row-grey">Name ID & VTT</div>
+        <div class="row">Min-Max</div>
+        <div class="row-grey">
+          <button class='calculate'>Calculate</button>
+          <input type="text" name="Price" size="1" id="input">
+        </div>
       </div>
-      <div class="plans">Magenta Voice</div>
-      <div class="row-grey removable">Yes</div>
-      <div class="row removable">Yes</div>
-      <div class="row-grey removable">3GB LTE- Unlimited 3G</div>
-      <div class="row removable">480P</div>
-      <div class="row-grey removable">Yes</div>
-      <div class="row removable">Yes</div>
-      <div class="row-grey removable">Yes (128 kbps)</div>
-      <div class="row removable">1 Hour</div>
-      <div class="row-grey removable">No</div>
-      <div class="row" id="price-2">0</div>
 
-    </div>
+      <div class="column" id="col-2">
+        <div class="minus" id="minus-2">
+          <i class="fas fa-minus-circle fa-md"></i>
+        </div>
+        <div class="plans">Magenta Voice</div>
+        <div class="row-grey removable">Yes</div>
+        <div class="row removable">Yes</div>
+        <div class="row-grey removable">3GB LTE- Unlimited 3G</div>
+        <div class="row removable">480P</div>
+        <div class="row-grey removable">Yes</div>
+        <div class="row removable">Yes</div>
+        <div class="row-grey removable">Yes (128 kbps)</div>
+        <div class="row removable">1 Hour</div>
+        <div class="row-grey removable">No</div>
+        <div class="row removable">1-12 lines/account</div>
+        <div class="row-grey removable bottom">
+          <p class="prices" id="price-2-autopay"></p>
+          <p class="prices" id="price-2"></p>
+        </div>
 
-    <div class="column" id="col-3">
-      <div class="minus">
-        <i class="fas fa-minus-circle fa-md"></i>
       </div>
-      <div class="plans">Magenta Plus</div>
-      <div class="row-grey removable">Yes</div>
-      <div class="row removable">Yes</div>
-      <div class="row-grey removable">20GB LTE- Unlimited 3G</div>
-      <div class="row removable">1080P</div>
-      <div class="row-grey removable">Yes</div>
-      <div class="row removable">Yes</div>
-      <div class="row-grey removable">Yes (256 kbps)</div>
-      <div class="row removable">Unlimited</div>
-      <div class="row-grey removable">Yes</div>
-      <div class="row" id="price-3">0</div>
+
+      <div class="column" id="col-3">
+        <div class="minus" id="minus-3">
+          <i class="fas fa-minus-circle fa-md"></i>
+        </div>
+        <div class="plans">Magenta Plus</div>
+        <div class="row-grey removable">Yes</div>
+        <div class="row removable">Yes</div>
+        <div class="row-grey removable">20GB LTE- Unlimited 3G</div>
+        <div class="row removable">1080P</div>
+        <div class="row-grey removable">Yes</div>
+        <div class="row removable">Yes</div>
+        <div class="row-grey removable">Yes (256 kbps)</div>
+        <div class="row removable">Unlimited</div>
+        <div class="row-grey removable">Yes</div>
+        <div class="row removable">1-12 lines/account</div>
+         <div class="row-grey removable bottom">
+          <p class="prices" id="price-3-autopay"></p>
+          <p class="prices" id="price-3"></p>
+        </div>
 
 
-    </div>
-
-    <div class="column" id="col-4">
-      <div class="minus">
-        <i class="fas fa-minus-circle fa-md"></i>
       </div>
-      <div class="plans">Essentials Voice</div>
-      <div class="row-grey removable">Yes</div>
-      <div class="row removable">Yes</div>
-      <div class="row-grey removable">Unlimited 3G</div>
-      <div class="row removable">480P</div>
-      <div class="row-grey removable">No</div>
-      <div class="row removable">Unlmtd Talk/Text/2G Data(128kbps)</div>
-      <div class="row-grey removable">Texting (No Data)</div>
-      <div class="row removable">No</div>
-      <div class="row-grey removable">No</div>
-      <div class="row" id="price-4">0</div>
+
+      <div class="column" id="col-4">
+        <div class="minus" id="minus-4">
+          <i class="fas fa-minus-circle fa-md"></i>
+        </div>
+        <div class="plans">Essentials Voice</div>
+        <div class="row-grey removable">Yes</div>
+        <div class="row removable">Yes</div>
+        <div class="row-grey removable">Unlimited 3G</div>
+        <div class="row removable">480P</div>
+        <div class="row-grey removable">No</div>
+        <div class="row removable">Unlmtd Talk/Text/2G Data(128kbps)</div>
+        <div class="row-grey removable">Texting (No Data)</div>
+        <div class="row removable">No</div>
+        <div class="row-grey removable">No</div>
+        <div class="row removable">1-6 lines/account</div>
+        <div class="row-grey removable bottom">
+          <p class="prices" id="price-4-autopay"></p>
+          <p class="prices" id="price-4"></p>
+        </div>
 
 
 
-    </div>
-
-    <div class="column" id="col-5">
-      <div class="minus">
-        <i class="fas fa-minus-circle fa-md"></i>
       </div>
-      <div class="plans">Essentials Unlimited 55</div>
-      <div class="row-grey removable">Yes</div>
-      <div class="row removable">Yes</div>
-      <div class="row-grey removable">Unlimited 3G</div>
-      <div class="row removable">480P</div>
-      <div class="row-grey removable">No</div>
-      <div class="row removable">Unlmtd Talk/Text/2G Data(128kbps)</div>
-      <div class="row-grey removable">Texting (No Data)</div>
-      <div class="row removable">No</div>
-      <div class="row-grey removable">No</div>
-      <div class="row" id="price-5">0</div>
+
+      <div class="column" id="col-5" style="display: none;">
+        <div class="minus" id="minus-5">
+          <i class="fas fa-minus-circle fa-md"></i>
+        </div>
+        <div class="plans">Essentials Unlimited 55</div>
+        <div class="row-grey removable">Yes</div>
+        <div class="row removable">Yes</div>
+        <div class="row-grey removable">Unlimited 3G</div>
+        <div class="row removable">480P</div>
+        <div class="row-grey removable">No</div>
+        <div class="row removable">Unlmtd Talk/Text/2G Data(128kbps)</div>
+        <div class="row-grey removable">Texting (No Data)</div>
+        <div class="row removable">No</div>
+        <div class="row-grey removable">No</div>
+        <div class="row removable">1-2 lines/account</div>
+        <div class="row-grey removable bottom">
+          <p class="prices" id="price-5-autopay"></p>
+          <p class="prices" id="price-5"></p>
+        </div>
 
 
 
-    </div>
-
-    <div class="column" id="col-6" style="display:none;">
-      <div class="minus">
-        <i class="fas fa-minus-circle fa-md"></i>
       </div>
-      <div class="plans">Magenta Unlimited 55</div>
-      <div class="row-grey removable">Yes</div>
-      <div class="row removable">Yes</div>
-      <div class="row-grey removable">3GB LTE- Unlimited 3G</div>
-      <div class="row removable">480P</div>
-      <div class="row-grey removable">Yes</div>
-      <div class="row removable">Yes</div>
-      <div class="row-grey removable">Yes (128 kbps)</div>
-      <div class="row removable">1 Hour</div>
-      <div class="row-grey removable">No</div>
-      <div class="row" id="price-6">0</div>
+
+      <div class="column" id="col-6" style="display:none;">
+        <div class="minus" id="minus-6">
+          <i class="fas fa-minus-circle fa-md"></i>
+        </div>
+        <div class="plans">Magenta Unlimited 55</div>
+        <div class="row-grey removable">Yes</div>
+        <div class="row removable">Yes</div>
+        <div class="row-grey removable">3GB LTE- Unlimited 3G</div>
+        <div class="row removable">480P</div>
+        <div class="row-grey removable">Yes</div>
+        <div class="row removable">Yes</div>
+        <div class="row-grey removable">Yes (128 kbps)</div>
+        <div class="row removable">1 Hour</div>
+        <div class="row-grey removable">No</div>
+        <div class="row removable">1-2 lines/account</div>
+        <div class="row-grey removable bottom">
+          <p class="prices" id="price-6-autopay"></p>
+          <p class="prices" id="price-6"></p>
+        </div>
 
 
-    </div>
-
-
-    <div class="column" id="col-7">
-      <div class="minus">
-        <i class="fas fa-minus-circle fa-md"></i>
       </div>
-      <div class="plans">Magenta Military</div>
-      <div class="row-grey removable">Yes</div>
-      <div class="row removable">Yes</div>
-      <div class="row-grey removable">3GB LTE- Unlimited 3G</div>
-      <div class="row removable">480P</div>
-      <div class="row-grey removable">Yes</div>
-      <div class="row removable">Yes</div>
-      <div class="row-grey removable">Yes (128 kbps)</div>
-      <div class="row removable">1 Hour</div>
-      <div class="row-grey removable">No</div>
-      <div class="row" id="price-7">0</div>
 
 
-    </div>
+      <div class="column" id="col-7" style="display: none;">
+        <div class="minus" id="minus-7">
+          <i class="fas fa-minus-circle fa-md"></i>
+        </div>
+        <div class="plans">Magenta Military</div>
+        <div class="row-grey removable">Yes</div>
+        <div class="row removable">Yes</div>
+        <div class="row-grey removable">3GB LTE- Unlimited 3G</div>
+        <div class="row removable">480P</div>
+        <div class="row-grey removable">Yes</div>
+        <div class="row removable">Yes</div>
+        <div class="row-grey removable">Yes (128 kbps)</div>
+        <div class="row removable">1 Hour</div>
+        <div class="row-grey removable">No</div>
+        <div class="row removable">1-12 lines/account</div>
+        <div class="row-grey removable bottom">
+          <p class="prices" id="price-7-autopay"></p>
+          <p class="prices" id="price-7"></p>
+        </div>
 
-    <div class="column" id="col-8" style="display: none;">
-      <div class="minus">
-        <i class="fas fa-minus-circle fa-md"></i>
+
       </div>
-      <div class="plans">Magenta Plus Military</div>
-      <div class="row-grey removable">Yes</div>
-      <div class="row removable">Yes</div>
-      <div class="row-grey removable">20GB LTE- Unlimited 3G</div>
-      <div class="row removable">1080P</div>
-      <div class="row-grey removable">Yes</div>
-      <div class="row removable">Yes</div>
-      <div class="row-grey removable">Yes (256 kbps)</div>
-      <div class="row removable">Unlimited</div>
-      <div class="row-grey removable">Yes</div>
-      <div class="row" id="price-8"></div>
+
+      <div class="column" id="col-8" style="display: none;">
+        <div class="minus" id="minus-8">
+          <i class="fas fa-minus-circle fa-md"></i>
+        </div>
+        <div class="plans">Magenta Plus Military</div>
+        <div class="row-grey removable">Yes</div>
+        <div class="row removable">Yes</div>
+        <div class="row-grey removable">20GB LTE- Unlimited 3G</div>
+        <div class="row removable">1080P</div>
+        <div class="row-grey removable">Yes</div>
+        <div class="row removable">Yes</div>
+        <div class="row-grey removable">Yes (256 kbps)</div>
+        <div class="row removable">Unlimited</div>
+        <div class="row-grey removable">Yes</div>
+        <div class="row removable">2-12 lines/account</div>
+        <div class="row-grey removable bottom">
+          <p class="prices" id="price-8-autopay"></p>
+          <p class="prices" id="price-8"></p>
+        </div>
 
 
-    </div>
-
-
-    <div class="column" id="col-9" style="display: none;">
-      <div class="minus">
-        <i class="fas fa-minus-circle fa-md"></i>
       </div>
-      <div class="plans">Value Essentials Voice</div>
-      <div class="row-grey removable">Yes</div>
-      <div class="row removable">Yes</div>
-      <div class="row-grey removable">Unlimited 3G</div>
-      <div class="row removable">480P</div>
-      <div class="row-grey removable">No</div>
-      <div class="row removable">Unlmtd Talk/Text/2G Data(128kbps)</div>
-      <div class="row-grey removable">Texting (No Data)</div>
-      <div class="row removable">No</div>
-      <div class="row-grey removable">No</div>
-      <div class="row" id="price-9">0</div>
 
 
-    </div>
+      <div class="column" id="col-9">
+        <div class="minus" id="minus-9">
+          <i class="fas fa-minus-circle fa-md"></i>
+        </div>
+        <div class="plans">Value Essentials Voice</div>
+        <div class="row-grey removable">Yes</div>
+        <div class="row removable">Yes</div>
+        <div class="row-grey removable">Unlimited 3G</div>
+        <div class="row removable">480P</div>
+        <div class="row-grey removable">No</div>
+        <div class="row removable">Unlmtd Talk/Text/2G Data(128kbps)</div>
+        <div class="row-grey removable">Texting (No Data)</div>
+        <div class="row removable">No</div>
+        <div class="row-grey removable">No</div>
+        <div class="row removable">4-6 lines/account</div>
+        <div class="row-grey removable bottom">
+          <p class="prices" id="price-9-autopay"></p>
+          <p class="prices" id="price-9"></p>
+        </div>
 
-    <div class="column" id="col-10" style="display: none;">
-      <div class="minus">
-        <i class="fas fa-minus-circle fa-md"></i>
+
       </div>
-      <div class="plans">Magenta First Responder</div>
-      <div class="row-grey removable">Yes</div>
-      <div class="row removable">Yes</div>
-      <div class="row-grey removable">3GB LTE- Unlimited 3G</div>
-      <div class="row removable">480P</div>
-      <div class="row-grey removable">Yes</div>
-      <div class="row removable">Yes</div>
-      <div class="row-grey removable">Yes (128 kbps)</div>
-      <div class="row removable">1 Hour</div>
-      <div class="row-grey removable">No</div>
-      <div class="row" id="price-10">0</div>
+
+      <div class="column" id="col-10" style="display: none;">
+        <div class="minus" id="minus-10">
+          <i class="fas fa-minus-circle fa-md"></i>
+        </div>
+        <div class="plans">Magenta First Responder</div>
+        <div class="row-grey removable">Yes</div>
+        <div class="row removable">Yes</div>
+        <div class="row-grey removable">3GB LTE- Unlimited 3G</div>
+        <div class="row removable">480P</div>
+        <div class="row-grey removable">Yes</div>
+        <div class="row removable">Yes</div>
+        <div class="row-grey removable">Yes (128 kbps)</div>
+        <div class="row removable">1 Hour</div>
+        <div class="row-grey removable">No</div>
+        <div class="row removable">1-12 lines/account</div>
+        <div class="row-grey removable bottom">
+          <p class="prices" id="price-10-autopay"></p>
+          <p class="prices" id="price-10"></p>
+        </div>
 
 
-    </div>
-
-
-    <div class="column" id="col-11" style="display: none;">
-      <div class="minus">
-        <i class="fas fa-minus-circle fa-md"></i>
       </div>
-      <div class="plans">Magenta First Responder Plus</div>
-      <div class="row-grey removable">Yes</div>
-      <div class="row removable">Yes</div>
-      <div class="row-grey removable">20GB LTE- Unlimited 3G</div>
-      <div class="row removable">1080P</div>
-      <div class="row-grey removable">Yes</div>
-      <div class="row removable">Yes</div>
-      <div class="row-grey removable">Yes (256 kbps)</div>
-      <div class="row removable">Unlimited</div>
-      <div class="row-grey removable">Yes</div>
-      <div class="row" id="price-11">0</div>
 
-    </div>
 
-    <div class="column" id="col-12" style="display: none;">
-      <div class="minus">
-        <i class="fas fa-minus-circle fa-md"></i>
+      <div class="column" id="col-11" style="display: none;">
+        <div class="minus" id="minus-11">
+          <i class="fas fa-minus-circle fa-md"></i>
+        </div>
+        <div class="plans">Magenta First Responder Plus</div>
+        <div class="row-grey removable">Yes</div>
+        <div class="row removable">Yes</div>
+        <div class="row-grey removable">20GB LTE- Unlimited 3G</div>
+        <div class="row removable">1080P</div>
+        <div class="row-grey removable">Yes</div>
+        <div class="row removable">Yes</div>
+        <div class="row-grey removable">Yes (256 kbps)</div>
+        <div class="row removable">Unlimited</div>
+        <div class="row-grey removable">Yes</div>
+        <div class="row removable">2-12 lines/account</div>
+        <div class="row-grey removable bottom">
+          <p class="prices" id="price-11-autopay"></p>
+          <p class="prices" id="price-11"></p>
+        </div>
+
       </div>
-      <div class="plans">Magenta Unlimited 55 Plus</div>
-      <div class="row-grey removable">Yes</div>
-      <div class="row removable">Yes</div>
-      <div class="row-grey removable">20GB LTE- Unlimited 3G</div>
-      <div class="row removable">1080P</div>
-      <div class="row-grey removable">Yes</div>
-      <div class="row removable">Yes</div>
-      <div class="row-grey removable">Yes (256 kbps)</div>
-      <div class="row removable">Unlimited</div>
-      <div class="row-grey removable">Yes</div>
-      <div class="row" id="price-12">0</div>
 
+      <div class="column" id="col-12" style="display: none;">
+        <div class="minus" id="minus-12">
+          <i class="fas fa-minus-circle fa-md"></i>
+        </div>
+        <div class="plans">Magenta Unlimited 55 Plus</div>
+        <div class="row-grey removable">Yes</div>
+        <div class="row removable">Yes</div>
+        <div class="row-grey removable">20GB LTE- Unlimited 3G</div>
+        <div class="row removable">1080P</div>
+        <div class="row-grey removable">Yes</div>
+        <div class="row removable">Yes</div>
+        <div class="row-grey removable">Yes (256 kbps)</div>
+        <div class="row removable">Unlimited</div>
+        <div class="row-grey removable">Yes</div>
+        <div class="row removable">2 lines/account</div>
+        <div class="row-grey removable bottom">
+          <p class="prices" id="price-12-autopay"></p>
+          <p class="prices" id="price-12"></p>
+        </div>
+
+      </div>
     </div>
 
 
@@ -253,15 +304,15 @@
         <div id='extras-dropdown'>
           <button class="extra-plans" id="col-10-btn">Magenta First Responder</button>
           <button class="extra-plans" id="col-11-btn">Magenta First Responder Plus</button>
-          <button class="extra-plans" id="col-9-btn">Value Essentials Voice</button>
+          <button class="extra-plans" id="col-7-btn">Magenta Military</button>
           <button class="extra-plans" id="col-8-btn">Magenta Plus Military</button>
+          <button class="extra-plans" id="col-5-btn" >Essentials Unlimted 55</button>
           <button class="extra-plans" id="col-6-btn">Magenta Unlimited 55</button>
-          <button class="extra-plans" id="col-7-btn" style="display: none;">Magenta Military</button>
-          <button class="extra-plans" id="col-5-btn" style="display: none;">Essentials Voice</button>
-          <button class="extra-plans" id="col-4-btn" style="display: none;">Value Essentials Voice</button>
+          <button class="extra-plans" id="col-12-btn">Magenta Unlimited 55 Plus</button>
+          <button class="extra-plans" id="col-9-btn" style="display: none;">Value Essentials Voice</button>
+          <button class="extra-plans" id="col-4-btn" style="display: none;">Essentials Voice</button>
           <button class="extra-plans" id="col-3-btn" style="display: none;">Magenta Plus</button>
           <button class="extra-plans" id="col-2-btn" style="display: none;">Magenta Voice</button>
-          <button class="extra-plans" id="col-12-btn" style="display: none;">Magenta Unlimited 55 Plus</button>
 
         </div>
     </div>
