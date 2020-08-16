@@ -4,7 +4,7 @@ const dropdown = document.getElementById('extras-dropdown');
 const plusMinus = document.getElementById('plus-minus');
 const minus = '<i class="fas fa-minus fa-2x"></i>';
 const plus = '<i class="fas fa-plus fa-2x"></i>';
-
+const calcButton = document.querySelector('.calculate');
 function planListener(btn, col, min) {
   const button = btn;
   minusListener(min, button);
@@ -49,23 +49,34 @@ function flipPlus() {
 
 function showPrices(number, plan) {
   const p = plan;
-  p.row.innerHTML = p.prices[`line${number}`];
-}
-
-function sanitise(data) {
-  const prices = data;
-  Object.keys(prices).forEach((v) => {
-    if (isNaN(prices[v])) {
-      prices[v] = 'N/A';
-    }
-    return prices;
-  });
+  let value = p.prices[`line${number}`];
+  if (isNaN(value)) {
+    value = 'N/A';
+  }
+  p.row.innerHTML = value;
 }
 
 document.querySelector('#input').value = 1;
 
 plans.forEach((plan) => {
-  let prices = sanitise(plan.prices);
   planListener(plan.button, plan.column, plan.minus);
   showPrices(1, plan);
 });
+
+calcButton.addEventListener('click', () => {
+  const count = document.getElementById('input').value;
+  plans.forEach((plan) => {
+    showPrices(count, plan);
+  });
+});
+
+function calcEnter() {
+  document.addEventListener('keydown', logKey);
+  function logKey(e) {
+    if (e.code === 'Enter'){
+      calcButton.click();
+    }
+  }
+};
+
+calcEnter();

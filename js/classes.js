@@ -22,11 +22,15 @@ class Plan {
     return this.calcPrices();
   }
 
+  get autoPrices() {
+    return this.autoPrices();
+  }
+
   get minus() {
     return this.findMinus();
   }
-
   // Method
+
   findRow() {
     return document.getElementById(`price-${this.number}`);
   }
@@ -43,12 +47,13 @@ class Plan {
     return document.getElementById(`minus-${this.number}`);
   }
 
-  calcPrices() {
+
+  calcAutoPrices() {
     let discount = 5;
     let i = 0;
-    const disPrice = this.data;
+    const disPrice = this.calcPrices;
     if (this.autopay === true) {
-      Object.keys(disPrice).forEach((v) => {
+      Object.keys(disPrice).forEach((v1) => {
         disPrice[v] -= discount;
         i += 1;
         if (i <= 8) {
@@ -57,6 +62,10 @@ class Plan {
       });
     }
     return disPrice;
+  }
+
+  calcPrices() {
+    return this.data;
   }
 }
 
