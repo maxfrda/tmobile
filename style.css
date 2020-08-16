@@ -12,6 +12,10 @@
 
 }
 
+.column-wrapper{
+  display: inline-block;
+}
+
 
 .row{
   background: #F7F7EF;
@@ -198,6 +202,7 @@ background: rgb(230,230,230);
 
 .prices{
   margin: .1rem;
+  font-weight: 600;
 }
 
 #input{

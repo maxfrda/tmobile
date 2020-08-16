@@ -5,11 +5,13 @@ const plusMinus = document.getElementById('plus-minus');
 const minus = '<i class="fas fa-minus fa-2x"></i>';
 const plus = '<i class="fas fa-plus fa-2x"></i>';
 const calcButton = document.querySelector('.calculate');
+
 function planListener(btn, col, min) {
   const button = btn;
   minusListener(min, button);
   button.addEventListener('click', () => {
     const column = col;
+    col.parentNode.append(col);
     column.style.display = 'inline-block';
     button.style.display = 'none';
     flipElement(dropdown);
@@ -59,7 +61,7 @@ function showPrices(number, plan) {
     auto = value;
   }
   if (isNaN(value)) {
-    p.row.innerHTML = 'N/A';
+    p.row.innerHTML = '&nbsp;';
     p.autoRow.innerHTML = 'N/A';
   } else {
     p.row.innerHTML = `$${value} Regular`;
