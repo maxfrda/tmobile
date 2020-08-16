@@ -1,4 +1,4 @@
-import firResPlus from './data.js';
+import plans from './data.js';
 
 const icons = document.getElementsByClassName('minus');
 const dropdown = document.getElementById('extras-dropdown');
@@ -13,7 +13,8 @@ function planListener(btn, col) {
     const column = col;
     column.style.display = 'inline-block';
     button.style.display = 'none';
-    flipPlans(dropdown);
+    flipElement(dropdown);
+    flipPlus();
   });
 }
 
@@ -26,24 +27,34 @@ function minusListener(item) {
 [...icons].forEach(minusListener);
 
 plusMinus.addEventListener('click', () => {
-  flipPlans(dropdown);
+  flipElement(dropdown);
+  flipPlus();
 });
 
-function flipPlans(item) {
+function flipElement(item) {
   const element = item;
   if (element.style.display !== 'block') {
     element.style.display = 'block';
-    plusMinus.innerHTML = minus;
   } else {
     element.style.display = 'none';
+  }
+
+}
+
+function flipPlus() {
+  if (document.querySelector('.fa-plus')) {
+    plusMinus.innerHTML = minus;
+  } else {
     plusMinus.innerHTML = plus;
   }
 }
 
-planListener(firResPlus.button, firResPlus.column);
-
-function showPrices(number) {
-  firResPlus.row.innerHTML = firResPlus.prices[`line${number}`];
+function showPrices(number, plan) {
+  const p = plan;
+  p.row.innerHTML = p.prices[`line${number}`];
 }
 
-showPrices(2);
+plans.forEach((plan) => {
+  planListener(plan.button, plan.column);
+  showPrices(1, plan);
+});
