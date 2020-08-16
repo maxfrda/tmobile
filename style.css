@@ -1,6 +1,7 @@
+
 .grid-wrapper{
   white-space: nowrap;
-  min-width: 90;
+
 }
 
 .column,
@@ -8,20 +9,23 @@
   display: inline-block;
   background: white;
   margin-right: .3rem;
+
 }
 
 .row{
-  background: #F7F7EF
+  background: #F7F7EF;
+  border: .05rem solid white;
+
 }
 .plans{
-  font-size:1.1rem;
+  font-size:.9rem;
   text-align: center;
   border-radius: .3rem;
   padding: 1rem;
-  border: .05rem solid white;
   color: white;
   font-weight: 600;
   background: #E21673;
+
 }
 
 .row-grey{
@@ -35,8 +39,10 @@ background: rgb(230,230,230);
   padding: .8rem;
   border-left: .3rem solid white;
   border-right: .3rem solid white;
-  font-size: .9rem;
+  font-size: .75rem;
   font-weight: 900;
+  border: .05rem solid white;
+
 
 
 }
@@ -46,12 +52,16 @@ background: rgb(230,230,230);
   font-weight: 100;
 }
 
-/*@media screen and (min-width: 1200px) {
-    body {
-        color: red;
-    }
-}*/
-
+/*@media screen and (max-width: 1400px) {
+   .row,
+   .row-grey{
+    font-size: 1rem;
+   }
+   .plans{
+    font-size: 1.5rem;
+   }
+}
+*/
 .column:hover > .minus{
   opacity: 10%;
 
@@ -63,4 +73,107 @@ background: rgb(230,230,230);
 
 .minus:hover{
   opacity: 100% !important;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+/* line 6, /home/max/code/maxfrda/diary/app/assets/stylesheets/_dropdown.scss */
+.dropdown-child {
+  display: none;
+  background-color: white;
+  min-width: 150px;
+  position: absolute;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+  z-index: 2;
+}
+
+/* line 15, /home/max/code/maxfrda/diary/app/assets/stylesheets/_dropdown.scss */
+.dropdown-item {
+  color: black;
+  padding: 10px;
+  text-decoration: none;
+  display: block;
+}
+
+.add{
+  display: inline-block;
+  vertical-align: top;
+  opacity: 30%;
+  margin-left: 2rem;
+  margin-top: 1rem;
+}
+
+.add:hover{
+  opacity: 100%;
+}
+
+.column.more-plans{
+  display: inline-block;
+  vertical-align: top;
+}
+
+.more{
+  background: #F7F7EF;;
+}
+
+.extra-plans{
+  font-size:.9rem;
+  text-align: center;
+  padding: .5rem;
+  border: .05rem solid white;
+  color: white;
+  font-weight: 600;
+  background: #E21673;
+  border-radius: .3rem;
+  display: block;
+
+}
+#extras-dropdown{
+  display: none;
+}
+
+.extra-plans:hover{
+  transform: scale(1.1);
+
+}
+
+
+
+.fas.fa-plus-circle{
+  padding-top: 1rem;
+  padding-right: .3rem;
+  opacity: 0%;
+
+}
+
+.fas.fa-plus-circle:hover{
+  opacity: 100%;
+}
+
+.fa-plus{
+  color: #E21673;
+  margin-left: 1rem;
+  opacity: 30%;
+  transform: scale(.8);
+  padding: top: 1rem;
+}
+
+.fa-plus:hover{
+  transform: scale(.9);
+  opacity: 100%;
+}
+
+.fa-minus{
+  color: #E21673;
+  margin-left: 1rem;
+  transform: scale(.8);
+  padding: top: 1rem;
+}
+
+.fa-minus:hover{
+  transform: scale(.75);
+
 }

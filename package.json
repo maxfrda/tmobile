@@ -1,0 +1,24 @@
+{
+  "name": "jslint",
+  "version": "1.0.0",
+  "description": "enforce code style",
+  "main": "home.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/maxfrda/tmobile.git"
+  },
+  "author": "max",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/maxfrda/tmobile/issues"
+  },
+  "homepage": "https://github.com/maxfrda/tmobile#readme",
+  "devDependencies": {
+    "eslint": "^7.6.0",
+    "eslint-config-airbnb-base": "^14.2.0",
+    "eslint-plugin-import": "^2.22.0"
+  }
+}
