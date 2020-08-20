@@ -1,5 +1,6 @@
 import plans from './data.js';
 
+
 const dropdown = document.getElementById('extras-dropdown');
 const plusMinus = document.getElementById('plus-minus');
 const minus = '<i class="fas fa-minus fa-2x"></i>';
@@ -93,3 +94,6 @@ function calcEnter() {
 };
 
 calcEnter();
+
+
+
