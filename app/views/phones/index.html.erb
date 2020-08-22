@@ -1,1 +1,12 @@
-index.html.erb
+<div class="phones">
+  <% @phones.each do |phone| %>
+    <p><%=phone.brand  %></p>
+    <p><%=phone.name  %></p>
+    <image width="60" height="100" src=<%= phone.image %>></p>
+    <p>Full Price:<%=phone.price  %></p>
+    <p>deposit: <%=phone.deposit  %></p>
+    <p>AAL: <%=phone.aal  %></p>
+    <p>BOGO: <%=phone.bogo  %></p>
+    <p><%=phone.trade_in  %></p>
+  <% end %>
+</div>

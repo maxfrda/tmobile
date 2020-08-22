@@ -4413,3 +4413,534 @@ Migrating to AddAalToPhones (20200821033953)
   [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
   [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
   [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to ChangeColumnValues (20200822011828)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TEMPORARY TABLE "aphones" ("id" integer NOT NULL PRIMARY KEY, "name" varchar DEFAULT NULL, "brand" varchar DEFAULT NULL, "price" integer DEFAULT NULL, "deposit" integer DEFAULT 0, "trade_in" boolean DEFAULT 0, "bogo" boolean DEFAULT 0, "image" varchar DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "aal" integer DEFAULT 0)[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "aphones" ("id","name","brand","price","deposit","trade_in","bogo","image","created_at","updated_at","aal")
+                     SELECT "id","name","brand","price","deposit","trade_in","bogo","image","created_at","updated_at","aal" FROM "phones"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE "phones"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "phones" ("id" integer NOT NULL PRIMARY KEY, "name" varchar DEFAULT NULL, "brand" varchar DEFAULT NULL, "price" integer DEFAULT NULL, "deposit" integer DEFAULT 0, "trade_in" boolean DEFAULT 0, "bogo" boolean DEFAULT 0, "image" varchar DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "aal" boolean DEFAULT 0)[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "phones" ("id","name","brand","price","deposit","trade_in","bogo","image","created_at","updated_at","aal")
+                     SELECT "id","name","brand","price","deposit","trade_in","bogo","image","created_at","updated_at","aal" FROM "aphones"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "aphones"[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[36mprimary::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20200822011828"]]
+  [1m[35m (5.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to ChangeMoreColumnValues (20200822020556)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TEMPORARY TABLE "aphones" ("id" integer NOT NULL PRIMARY KEY, "name" varchar DEFAULT NULL, "brand" varchar DEFAULT NULL, "price" integer DEFAULT NULL, "deposit" integer DEFAULT 0, "trade_in" boolean DEFAULT 0, "bogo" boolean DEFAULT 0, "image" varchar DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "aal" boolean DEFAULT 0)[0m
+  [1m[35m (0.2ms)[0m  [1m[32mINSERT INTO "aphones" ("id","name","brand","price","deposit","trade_in","bogo","image","created_at","updated_at","aal")
+                     SELECT "id","name","brand","price","deposit","trade_in","bogo","image","created_at","updated_at","aal" FROM "phones"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE "phones"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "phones" ("id" integer NOT NULL PRIMARY KEY, "name" varchar DEFAULT NULL, "brand" varchar DEFAULT NULL, "price" integer DEFAULT NULL, "deposit" integer DEFAULT 0, "trade_in" boolean DEFAULT 0, "bogo" boolean DEFAULT 0, "image" varchar DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "aal" integer DEFAULT 0)[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "phones" ("id","name","brand","price","deposit","trade_in","bogo","image","created_at","updated_at","aal")
+                     SELECT "id","name","brand","price","deposit","trade_in","bogo","image","created_at","updated_at","aal" FROM "aphones"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "aphones"[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TEMPORARY TABLE "aphones" ("id" integer NOT NULL PRIMARY KEY, "name" varchar DEFAULT NULL, "brand" varchar DEFAULT NULL, "price" integer DEFAULT NULL, "deposit" integer DEFAULT 0, "trade_in" boolean DEFAULT 0, "bogo" boolean DEFAULT 0, "image" varchar DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "aal" integer DEFAULT 0)[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "aphones" ("id","name","brand","price","deposit","trade_in","bogo","image","created_at","updated_at","aal")
+                     SELECT "id","name","brand","price","deposit","trade_in","bogo","image","created_at","updated_at","aal" FROM "phones"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "phones"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "phones" ("id" integer NOT NULL PRIMARY KEY, "name" varchar DEFAULT NULL, "brand" varchar DEFAULT NULL, "price" integer DEFAULT NULL, "deposit" integer DEFAULT 0, "trade_in" integer DEFAULT 0, "bogo" boolean DEFAULT 0, "image" varchar DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "aal" integer DEFAULT 0)[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "phones" ("id","name","brand","price","deposit","trade_in","bogo","image","created_at","updated_at","aal")
+                     SELECT "id","name","brand","price","deposit","trade_in","bogo","image","created_at","updated_at","aal" FROM "aphones"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "aphones"[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TEMPORARY TABLE "aphones" ("id" integer NOT NULL PRIMARY KEY, "name" varchar DEFAULT NULL, "brand" varchar DEFAULT NULL, "price" integer DEFAULT NULL, "deposit" integer DEFAULT 0, "trade_in" integer DEFAULT 0, "bogo" boolean DEFAULT 0, "image" varchar DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "aal" integer DEFAULT 0)[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "aphones" ("id","name","brand","price","deposit","trade_in","bogo","image","created_at","updated_at","aal")
+                     SELECT "id","name","brand","price","deposit","trade_in","bogo","image","created_at","updated_at","aal" FROM "phones"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "phones"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "phones" ("id" integer NOT NULL PRIMARY KEY, "name" varchar DEFAULT NULL, "brand" varchar DEFAULT NULL, "price" integer DEFAULT NULL, "deposit" integer DEFAULT 0, "trade_in" integer DEFAULT 0, "bogo" integer DEFAULT 0, "image" varchar DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "aal" integer DEFAULT 0)[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "phones" ("id","name","brand","price","deposit","trade_in","bogo","image","created_at","updated_at","aal")
+                     SELECT "id","name","brand","price","deposit","trade_in","bogo","image","created_at","updated_at","aal" FROM "aphones"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "aphones"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[36mprimary::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20200822020556"]]
+  [1m[35m (14.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to ChangeTradeInToHash (20200822021021)
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to ChangeTradeInToHash (20200822021021)
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to ChangeTradeInToHash (20200822021021)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TEMPORARY TABLE "aphones" ("id" integer NOT NULL PRIMARY KEY, "name" varchar DEFAULT NULL, "brand" varchar DEFAULT NULL, "price" integer DEFAULT NULL, "deposit" integer DEFAULT 0, "trade_in" integer DEFAULT 0, "bogo" integer DEFAULT 0, "image" varchar DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "aal" integer DEFAULT 0)[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "aphones" ("id","name","brand","price","deposit","trade_in","bogo","image","created_at","updated_at","aal")
+                     SELECT "id","name","brand","price","deposit","trade_in","bogo","image","created_at","updated_at","aal" FROM "phones"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE "phones"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "phones" ("id" integer NOT NULL PRIMARY KEY, "name" varchar DEFAULT NULL, "brand" varchar DEFAULT NULL, "price" integer DEFAULT NULL, "deposit" integer DEFAULT 0, "trade_in" hash DEFAULT NULL, "bogo" integer DEFAULT 0, "image" varchar DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "aal" integer DEFAULT 0)[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "phones" ("id","name","brand","price","deposit","trade_in","bogo","image","created_at","updated_at","aal")
+                     SELECT "id","name","brand","price","deposit","trade_in","bogo","image","created_at","updated_at","aal" FROM "aphones"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "aphones"[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[36mprimary::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20200822021021"]]
+  [1m[35m (5.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to ChangeTradeInToText (20200822021250)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TEMPORARY TABLE "aphones" ("id" integer NOT NULL PRIMARY KEY, "name" varchar DEFAULT NULL, "brand" varchar DEFAULT NULL, "price" integer DEFAULT NULL, "deposit" integer DEFAULT 0, "trade_in"  DEFAULT NULL, "bogo" integer DEFAULT 0, "image" varchar DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "aal" integer DEFAULT 0)[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "aphones" ("id","name","brand","price","deposit","trade_in","bogo","image","created_at","updated_at","aal")
+                     SELECT "id","name","brand","price","deposit","trade_in","bogo","image","created_at","updated_at","aal" FROM "phones"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE "phones"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "phones" ("id" integer NOT NULL PRIMARY KEY, "name" varchar DEFAULT NULL, "brand" varchar DEFAULT NULL, "price" integer DEFAULT NULL, "deposit" integer DEFAULT 0, "trade_in" text DEFAULT NULL, "bogo" integer DEFAULT 0, "image" varchar DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "aal" integer DEFAULT 0)[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "phones" ("id","name","brand","price","deposit","trade_in","bogo","image","created_at","updated_at","aal")
+                     SELECT "id","name","brand","price","deposit","trade_in","bogo","image","created_at","updated_at","aal" FROM "aphones"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "aphones"[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[36mprimary::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20200822021250"]]
+  [1m[35m (14.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to AddTradeBooleanToPhones (20200822021421)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "phones" ADD "trade_in?" boolean DEFAULT 0[0m
+  [1m[36mprimary::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20200822021421"]]
+  [1m[35m (14.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to AddFloats (20200822021956)
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to AddFloats (20200822021956)
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to AddFloats (20200822021956)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TEMPORARY TABLE "aphones" ("id" integer NOT NULL PRIMARY KEY, "name" varchar DEFAULT NULL, "brand" varchar DEFAULT NULL, "price" integer DEFAULT NULL, "deposit" integer DEFAULT 0, "trade_in" text DEFAULT NULL, "bogo" integer DEFAULT 0, "image" varchar DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "aal" integer DEFAULT 0, "trade_in?" boolean DEFAULT 0)[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "aphones" ("id","name","brand","price","deposit","trade_in","bogo","image","created_at","updated_at","aal","trade_in?")
+                     SELECT "id","name","brand","price","deposit","trade_in","bogo","image","created_at","updated_at","aal","trade_in?" FROM "phones"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE "phones"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "phones" ("id" integer NOT NULL PRIMARY KEY, "name" varchar DEFAULT NULL, "brand" varchar DEFAULT NULL, "price" integer DEFAULT NULL, "deposit" integer DEFAULT 0, "trade_in" text DEFAULT NULL, "bogo" integer DEFAULT 0, "image" varchar DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "aal" float DEFAULT 0.0, "trade_in?" boolean DEFAULT 0)[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "phones" ("id","name","brand","price","deposit","trade_in","bogo","image","created_at","updated_at","aal","trade_in?")
+                     SELECT "id","name","brand","price","deposit","trade_in","bogo","image","created_at","updated_at","aal","trade_in?" FROM "aphones"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "aphones"[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TEMPORARY TABLE "aphones" ("id" integer NOT NULL PRIMARY KEY, "name" varchar DEFAULT NULL, "brand" varchar DEFAULT NULL, "price" integer DEFAULT NULL, "deposit" integer DEFAULT 0, "trade_in" text DEFAULT NULL, "bogo" integer DEFAULT 0, "image" varchar DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "aal" float DEFAULT 0.0, "trade_in?" boolean DEFAULT 0)[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "aphones" ("id","name","brand","price","deposit","trade_in","bogo","image","created_at","updated_at","aal","trade_in?")
+                     SELECT "id","name","brand","price","deposit","trade_in","bogo","image","created_at","updated_at","aal","trade_in?" FROM "phones"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "phones"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "phones" ("id" integer NOT NULL PRIMARY KEY, "name" varchar DEFAULT NULL, "brand" varchar DEFAULT NULL, "price" integer DEFAULT NULL, "deposit" float DEFAULT 0.0, "trade_in" text DEFAULT NULL, "bogo" integer DEFAULT 0, "image" varchar DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "aal" float DEFAULT 0.0, "trade_in?" boolean DEFAULT 0)[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "phones" ("id","name","brand","price","deposit","trade_in","bogo","image","created_at","updated_at","aal","trade_in?")
+                     SELECT "id","name","brand","price","deposit","trade_in","bogo","image","created_at","updated_at","aal","trade_in?" FROM "aphones"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "aphones"[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TEMPORARY TABLE "aphones" ("id" integer NOT NULL PRIMARY KEY, "name" varchar DEFAULT NULL, "brand" varchar DEFAULT NULL, "price" integer DEFAULT NULL, "deposit" float DEFAULT 0.0, "trade_in" text DEFAULT NULL, "bogo" integer DEFAULT 0, "image" varchar DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "aal" float DEFAULT 0.0, "trade_in?" boolean DEFAULT 0)[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "aphones" ("id","name","brand","price","deposit","trade_in","bogo","image","created_at","updated_at","aal","trade_in?")
+                     SELECT "id","name","brand","price","deposit","trade_in","bogo","image","created_at","updated_at","aal","trade_in?" FROM "phones"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "phones"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "phones" ("id" integer NOT NULL PRIMARY KEY, "name" varchar DEFAULT NULL, "brand" varchar DEFAULT NULL, "price" integer DEFAULT NULL, "deposit" float DEFAULT 0.0, "trade_in" text DEFAULT NULL, "bogo" float DEFAULT 0.0, "image" varchar DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "aal" float DEFAULT 0.0, "trade_in?" boolean DEFAULT 0)[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "phones" ("id","name","brand","price","deposit","trade_in","bogo","image","created_at","updated_at","aal","trade_in?")
+                     SELECT "id","name","brand","price","deposit","trade_in","bogo","image","created_at","updated_at","aal","trade_in?" FROM "aphones"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "aphones"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TEMPORARY TABLE "aphones" ("id" integer NOT NULL PRIMARY KEY, "name" varchar DEFAULT NULL, "brand" varchar DEFAULT NULL, "price" integer DEFAULT NULL, "deposit" float DEFAULT 0.0, "trade_in" text DEFAULT NULL, "bogo" float DEFAULT 0.0, "image" varchar DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "aal" float DEFAULT 0.0, "trade_in?" boolean DEFAULT 0)[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "aphones" ("id","name","brand","price","deposit","trade_in","bogo","image","created_at","updated_at","aal","trade_in?")
+                     SELECT "id","name","brand","price","deposit","trade_in","bogo","image","created_at","updated_at","aal","trade_in?" FROM "phones"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "phones"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "phones" ("id" integer NOT NULL PRIMARY KEY, "name" varchar DEFAULT NULL, "brand" varchar DEFAULT NULL, "price" float DEFAULT 0.0, "deposit" float DEFAULT 0.0, "trade_in" text DEFAULT NULL, "bogo" float DEFAULT 0.0, "image" varchar DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "aal" float DEFAULT 0.0, "trade_in?" boolean DEFAULT 0)[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "phones" ("id","name","brand","price","deposit","trade_in","bogo","image","created_at","updated_at","aal","trade_in?")
+                     SELECT "id","name","brand","price","deposit","trade_in","bogo","image","created_at","updated_at","aal","trade_in?" FROM "aphones"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "aphones"[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[36mprimary::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20200822021956"]]
+  [1m[35m (9.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for ::1 at 2020-08-21 22:29:25 -0400
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (Duration: 35.4ms | Allocations: 15421)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 59ms (Views: 54.4ms | ActiveRecord: 0.0ms | Allocations: 24873)
+
+
+Started GET "/phones" for ::1 at 2020-08-21 22:29:34 -0400
+Processing by PhonesController#index as HTML
+  Rendering phones/index.html.erb within layouts/application
+  Rendered phones/index.html.erb within layouts/application (Duration: 7.5ms | Allocations: 1315)
+Completed 500 Internal Server Error in 17ms (ActiveRecord: 0.0ms | Allocations: 2932)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <div class="phones">
+  <% @phones.each do |phone| %>
+    <p>@phone.image</p>
+    <p>@phone.name</p>
+    <p>@phone.brand</p>
+    <p>@phone.price</p>
+    <p>@phone.deposit</p>
+    <p>@phone.aal</p>
+    <p>@phone.bogo</p>
+    <p>@phone.trade_in</p>
+</div>
+
+):
+1:    <div class="phones">
+2:      <% @phones.each do |phone| %>
+3:        <p>@phone.image</p>
+4:        <p>@phone.name</p>
+5:        <p>@phone.brand</p>
+6:        <p>@phone.price</p>
+7:        <p>@phone.deposit</p>
+8:        <p>@phone.aal</p>
+9:        <p>@phone.bogo</p>
+10:        <p>@phone.trade_in</p>
+11:    </div>
+  
+app/views/phones/index.html.erb:14: syntax error, unexpected end-of-input, expecting `end'
+app/views/phones/index.html.erb:14: syntax error, unexpected end-of-input, expecting `end'
+app/views/phones/index.html.erb:14: syntax error, unexpected end-of-input, expecting `end'
+app/views/phones/index.html.erb:14: syntax error, unexpected end-of-input, expecting `end'
+app/views/phones/index.html.erb:14: syntax error, unexpected end-of-input, expecting `end'
+app/views/phones/index.html.erb:14: syntax error, unexpected end-of-input, expecting `end'
+Started GET "/phones" for ::1 at 2020-08-21 22:31:05 -0400
+Processing by PhonesController#index as HTML
+  Rendering phones/index.html.erb within layouts/application
+  [1m[36mPhone Load (0.5ms)[0m  [1m[34mSELECT "phones".* FROM "phones"[0m
+  ↳ app/views/phones/index.html.erb:2
+  Rendered phones/index.html.erb within layouts/application (Duration: 7.8ms | Allocations: 1587)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 23ms (Views: 19.0ms | ActiveRecord: 1.3ms | Allocations: 6056)
+
+
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPhone Create (0.3ms)[0m  [1m[32mINSERT INTO "phones" ("name", "brand", "bogo", "image", "created_at", "updated_at", "trade_in?") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "iPhone11"], ["brand", "Apple"], ["bogo", 29.17], ["image", "https://cdn.tmobile.com/content/dam/t-mobile/en-p/cell-phones/apple/Apple-iPhone-SE/PRODUCT-RED/Apple-iPhone-SE-PRODUCT-RED-thumbnail.png"], ["created_at", "2020-08-22 02:31:25.927042"], ["updated_at", "2020-08-22 02:31:25.927042"], ["trade_in?", 1]]
+  [1m[35m (14.0ms)[0m  [1m[36mcommit transaction[0m
+Started GET "/phones" for ::1 at 2020-08-21 22:31:38 -0400
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PhonesController#index as HTML
+  Rendering phones/index.html.erb within layouts/application
+  [1m[36mPhone Load (0.2ms)[0m  [1m[34mSELECT "phones".* FROM "phones"[0m
+  ↳ app/views/phones/index.html.erb:2
+  Rendered phones/index.html.erb within layouts/application (Duration: 18.8ms | Allocations: 9843)
+Completed 500 Internal Server Error in 27ms (ActiveRecord: 0.7ms | Allocations: 12273)
+
+
+  
+ActionView::Template::Error (undefined method `image' for nil:NilClass):
+    1: <div class="phones">
+    2:   <% @phones.each do |phone| %>
+    3:     <p><%=@phone.image  %></p>
+    4:     <p><%=@phone.name  %></p>
+    5:     <p><%=@phone.brand  %></p>
+    6:     <p><%=@phone.price  %></p>
+  
+app/views/phones/index.html.erb:3
+app/views/phones/index.html.erb:2
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mPhone Load (0.2ms)[0m  [1m[34mSELECT "phones".* FROM "phones" LIMIT ?[0m  [["LIMIT", 11]]
+Started GET "/phones" for ::1 at 2020-08-21 22:34:46 -0400
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PhonesController#index as HTML
+  Rendering phones/index.html.erb within layouts/application
+  [1m[36mPhone Load (0.2ms)[0m  [1m[34mSELECT "phones".* FROM "phones"[0m
+  ↳ app/views/phones/index.html.erb:2
+  Rendered phones/index.html.erb within layouts/application (Duration: 18.9ms | Allocations: 9843)
+Completed 500 Internal Server Error in 27ms (ActiveRecord: 0.7ms | Allocations: 12391)
+
+
+  
+ActionView::Template::Error (undefined method `image' for nil:NilClass):
+    1: <div class="phones">
+    2:   <% @phones.each do |phone| %>
+    3:     <p><%=@phone.image  %></p>
+    4:     <p><%=@phone.name  %></p>
+    5:     <p><%=@phone.brand  %></p>
+    6:     <p><%=@phone.price  %></p>
+  
+app/views/phones/index.html.erb:3
+app/views/phones/index.html.erb:2
+Started PUT "/__web_console/repl_sessions/59abbce043cf8b586bcab21468d113b0" for ::1 at 2020-08-21 22:34:50 -0400
+Started PUT "/__web_console/repl_sessions/59abbce043cf8b586bcab21468d113b0" for ::1 at 2020-08-21 22:34:52 -0400
+Started GET "/phones" for ::1 at 2020-08-21 22:35:16 -0400
+Processing by PhonesController#index as HTML
+  Rendering phones/index.html.erb within layouts/application
+  [1m[36mPhone Load (0.2ms)[0m  [1m[34mSELECT "phones".* FROM "phones"[0m
+  ↳ app/views/phones/index.html.erb:2
+  Rendered phones/index.html.erb within layouts/application (Duration: 2.5ms | Allocations: 869)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 20ms (Views: 17.3ms | ActiveRecord: 0.2ms | Allocations: 8090)
+
+
+Started GET "/phones" for ::1 at 2020-08-21 22:38:58 -0400
+Processing by PhonesController#index as HTML
+  Rendering phones/index.html.erb within layouts/application
+  [1m[36mPhone Load (0.5ms)[0m  [1m[34mSELECT "phones".* FROM "phones"[0m
+  ↳ app/views/phones/index.html.erb:2
+  Rendered phones/index.html.erb within layouts/application (Duration: 6.8ms | Allocations: 858)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 26ms (Views: 23.3ms | ActiveRecord: 0.5ms | Allocations: 5271)
+
+
+Started GET "/phones" for ::1 at 2020-08-21 22:40:33 -0400
+Processing by PhonesController#index as HTML
+  Rendering phones/index.html.erb within layouts/application
+  [1m[36mPhone Load (0.4ms)[0m  [1m[34mSELECT "phones".* FROM "phones"[0m
+  ↳ app/views/phones/index.html.erb:2
+  Rendered phones/index.html.erb within layouts/application (Duration: 6.1ms | Allocations: 858)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 24ms (Views: 20.9ms | ActiveRecord: 0.4ms | Allocations: 5281)
+
+
+Started GET "/phones" for ::1 at 2020-08-21 22:40:51 -0400
+Processing by PhonesController#index as HTML
+  Rendering phones/index.html.erb within layouts/application
+  [1m[36mPhone Load (0.4ms)[0m  [1m[34mSELECT "phones".* FROM "phones"[0m
+  ↳ app/views/phones/index.html.erb:2
+  Rendered phones/index.html.erb within layouts/application (Duration: 4.1ms | Allocations: 858)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 26ms (Views: 23.4ms | ActiveRecord: 0.4ms | Allocations: 5283)
+
+
+Started GET "/phones" for ::1 at 2020-08-21 22:40:58 -0400
+Processing by PhonesController#index as HTML
+  Rendering phones/index.html.erb within layouts/application
+  [1m[36mPhone Load (0.3ms)[0m  [1m[34mSELECT "phones".* FROM "phones"[0m
+  ↳ app/views/phones/index.html.erb:2
+  Rendered phones/index.html.erb within layouts/application (Duration: 4.5ms | Allocations: 852)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 23ms (Views: 20.1ms | ActiveRecord: 0.3ms | Allocations: 5278)
+
+
+Started GET "/phones" for ::1 at 2020-08-21 22:41:23 -0400
+Processing by PhonesController#index as HTML
+  Rendering phones/index.html.erb within layouts/application
+  [1m[36mPhone Load (0.3ms)[0m  [1m[34mSELECT "phones".* FROM "phones"[0m
+  ↳ app/views/phones/index.html.erb:2
+  Rendered phones/index.html.erb within layouts/application (Duration: 4.3ms | Allocations: 849)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 20ms (Views: 17.6ms | ActiveRecord: 0.3ms | Allocations: 5248)
+
+
+Started GET "/phones" for ::1 at 2020-08-21 22:41:33 -0400
+Processing by PhonesController#index as HTML
+  Rendering phones/index.html.erb within layouts/application
+  [1m[36mPhone Load (0.1ms)[0m  [1m[34mSELECT "phones".* FROM "phones"[0m
+  ↳ app/views/phones/index.html.erb:2
+  Rendered phones/index.html.erb within layouts/application (Duration: 1.3ms | Allocations: 849)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 7ms (Views: 6.1ms | ActiveRecord: 0.1ms | Allocations: 5262)
+
+
+Started GET "/phones" for ::1 at 2020-08-21 22:43:10 -0400
+Processing by PhonesController#index as HTML
+  Rendering phones/index.html.erb within layouts/application
+  [1m[36mPhone Load (0.3ms)[0m  [1m[34mSELECT "phones".* FROM "phones"[0m
+  ↳ app/views/phones/index.html.erb:2
+  Rendered phones/index.html.erb within layouts/application (Duration: 4.9ms | Allocations: 853)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 20ms (Views: 17.1ms | ActiveRecord: 0.3ms | Allocations: 5256)
+
+
+Started GET "/phones" for ::1 at 2020-08-21 22:43:29 -0400
+Processing by PhonesController#index as HTML
+  Rendering phones/index.html.erb within layouts/application
+  [1m[36mPhone Load (0.2ms)[0m  [1m[34mSELECT "phones".* FROM "phones"[0m
+  ↳ app/views/phones/index.html.erb:2
+  Rendered phones/index.html.erb within layouts/application (Duration: 3.6ms | Allocations: 851)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 19ms (Views: 15.2ms | ActiveRecord: 0.2ms | Allocations: 5254)
+
+
+Started GET "/phones" for ::1 at 2020-08-21 22:58:55 -0400
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by PhonesController#index as HTML
+  Rendering phones/index.html.erb within layouts/application
+  [1m[36mPhone Load (0.3ms)[0m  [1m[34mSELECT "phones".* FROM "phones"[0m
+  ↳ app/views/phones/index.html.erb:2
+  Rendered phones/index.html.erb within layouts/application (Duration: 3.3ms | Allocations: 884)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 15ms (Views: 12.6ms | ActiveRecord: 0.3ms | Allocations: 5305)
+
+
+Started GET "/phones" for ::1 at 2020-08-21 22:58:56 -0400
+Processing by PhonesController#index as HTML
+  Rendering phones/index.html.erb within layouts/application
+  [1m[36mPhone Load (0.2ms)[0m  [1m[34mSELECT "phones".* FROM "phones"[0m
+  ↳ app/views/phones/index.html.erb:2
+  Rendered phones/index.html.erb within layouts/application (Duration: 2.0ms | Allocations: 625)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 11ms (Views: 9.4ms | ActiveRecord: 0.2ms | Allocations: 4120)
+
+
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPhone Create (0.3ms)[0m  [1m[32mINSERT INTO "phones" ("name", "brand", "price", "bogo", "image", "created_at", "updated_at", "trade_in?") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "iPhone11"], ["brand", "Apple"], ["price", 699.99], ["bogo", 29.17], ["image", "https://cdn.tmobile.com/content/dam/t-mobile/en-p/cell-phones/apple/Apple\n -iPhone-SE/PRODUCT-RED/Apple-iPhone-SE-PRODUCT-RED-thumbnail.png"], ["created_at", "2020-08-22 02:59:10.578667"], ["updated_at", "2020-08-22 02:59:10.578667"], ["trade_in?", 1]]
+  [1m[35m (7.3ms)[0m  [1m[36mcommit transaction[0m
+Started GET "/phones" for ::1 at 2020-08-21 22:59:16 -0400
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PhonesController#index as HTML
+  Rendering phones/index.html.erb within layouts/application
+  [1m[36mPhone Load (0.2ms)[0m  [1m[34mSELECT "phones".* FROM "phones"[0m
+  ↳ app/views/phones/index.html.erb:2
+  Rendered phones/index.html.erb within layouts/application (Duration: 17.4ms | Allocations: 8265)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 34ms (Views: 27.2ms | ActiveRecord: 0.7ms | Allocations: 16629)
+
+
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPhone Create (0.3ms)[0m  [1m[32mINSERT INTO "phones" ("name", "brand", "price", "bogo", "image", "created_at", "updated_at", "trade_in?") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "iPhone11"], ["brand", "Apple"], ["price", 699.99], ["bogo", 29.17], ["image", "https://cdn.tmobile.com/content/dam/t-mobile/en-p/cell-phones/apple/Apple\n -iPhone-SE/PRODUCT-RED/Apple-iPhone-SE-PRODUCT-RED-thumbnail.png"], ["created_at", "2020-08-22 02:59:46.845883"], ["updated_at", "2020-08-22 02:59:46.845883"], ["trade_in?", 1]]
+  [1m[35m (5.5ms)[0m  [1m[36mcommit transaction[0m
+Started GET "/phones" for ::1 at 2020-08-21 22:59:57 -0400
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PhonesController#index as HTML
+  Rendering phones/index.html.erb within layouts/application
+  [1m[36mPhone Load (0.2ms)[0m  [1m[34mSELECT "phones".* FROM "phones"[0m
+  ↳ app/views/phones/index.html.erb:2
+  Rendered phones/index.html.erb within layouts/application (Duration: 17.9ms | Allocations: 8300)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 33ms (Views: 27.0ms | ActiveRecord: 0.7ms | Allocations: 16652)
+
+
+Started GET "/phones" for ::1 at 2020-08-21 23:01:31 -0400
+Processing by PhonesController#index as HTML
+  Rendering phones/index.html.erb within layouts/application
+  [1m[36mPhone Load (0.4ms)[0m  [1m[34mSELECT "phones".* FROM "phones"[0m
+  ↳ app/views/phones/index.html.erb:2
+  Rendered phones/index.html.erb within layouts/application (Duration: 6.4ms | Allocations: 704)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 25ms (Views: 22.9ms | ActiveRecord: 0.4ms | Allocations: 4213)
+
+
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPhone Create (0.2ms)[0m  [1m[32mINSERT INTO "phones" ("name", "brand", "price", "bogo", "image", "created_at", "updated_at", "trade_in?") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "iPhone11"], ["brand", "Apple"], ["price", 699.99], ["bogo", 29.17], ["image", "https://cdn.tmobile.com/content/dam/t-mobile/en-p/cell-phones/apple/Apple\n -iPhone-SE/PRODUCT-RED/Apple-iPhone-SE-PRODUCT-RED-thumbnail.png"], ["created_at", "2020-08-22 03:01:40.189991"], ["updated_at", "2020-08-22 03:01:40.189991"], ["trade_in?", 1]]
+  [1m[35m (6.3ms)[0m  [1m[36mcommit transaction[0m
+Started GET "/phones" for ::1 at 2020-08-21 23:01:45 -0400
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PhonesController#index as HTML
+  Rendering phones/index.html.erb within layouts/application
+  [1m[36mPhone Load (0.2ms)[0m  [1m[34mSELECT "phones".* FROM "phones"[0m
+  ↳ app/views/phones/index.html.erb:2
+  Rendered phones/index.html.erb within layouts/application (Duration: 18.0ms | Allocations: 8336)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 36ms (Views: 28.8ms | ActiveRecord: 0.8ms | Allocations: 16904)
+
+
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mPhone Load (0.1ms)[0m  [1m[34mSELECT "phones".* FROM "phones"[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPhone Destroy (0.2ms)[0m  [1m[31mDELETE FROM "phones" WHERE "phones"."id" = ?[0m  [["id", 1]]
+  [1m[35m (6.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPhone Destroy (0.4ms)[0m  [1m[31mDELETE FROM "phones" WHERE "phones"."id" = ?[0m  [["id", 2]]
+  [1m[35m (5.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPhone Destroy (0.2ms)[0m  [1m[31mDELETE FROM "phones" WHERE "phones"."id" = ?[0m  [["id", 3]]
+  [1m[35m (5.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPhone Destroy (0.2ms)[0m  [1m[31mDELETE FROM "phones" WHERE "phones"."id" = ?[0m  [["id", 4]]
+  [1m[35m (6.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPhone Create (0.4ms)[0m  [1m[32mINSERT INTO "phones" ("name", "brand", "price", "bogo", "image", "created_at", "updated_at", "trade_in?") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "iPhone11"], ["brand", "Apple"], ["price", 699.99], ["bogo", 29.17], ["image", "https://cdn.tmobile.com/content/dam/t-mobile/en-p/cell-phones/apple/Apple-iPhone-SE/PRODUCT-RED/Apple-iPhone-SE-PRODUCT-RED-thumbnail.png"], ["created_at", "2020-08-22 03:02:42.143059"], ["updated_at", "2020-08-22 03:02:42.143059"], ["trade_in?", 1]]
+  [1m[35m (6.0ms)[0m  [1m[36mcommit transaction[0m
+Started GET "/phones" for ::1 at 2020-08-21 23:02:44 -0400
+Processing by PhonesController#index as HTML
+  Rendering phones/index.html.erb within layouts/application
+  [1m[36mPhone Load (0.4ms)[0m  [1m[34mSELECT "phones".* FROM "phones"[0m
+  ↳ app/views/phones/index.html.erb:2
+  Rendered phones/index.html.erb within layouts/application (Duration: 6.7ms | Allocations: 634)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 27ms (Views: 21.7ms | ActiveRecord: 0.4ms | Allocations: 4141)
+
+
