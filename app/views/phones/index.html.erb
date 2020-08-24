@@ -1,1 +1,23 @@
-index.html.erb
+
+<div class="phones" style="visibility: hidden;">
+  <% @phones.each do |phone| %>
+    <p><%=phone.brand  %></p>
+    <p><%=phone.name  %></p>
+    <image width="60" height="100" src=<%= phone.image %>></p>
+    <p>Full Price:<%=phone.price  %></p>
+    <p>deposit: <%=phone.deposit  %></p>
+    <p>AAL: <%=phone.aal  %></p>
+    <p>BOGO: <%=phone.bogo  %></p>
+    <p><%=phone.trade_in  %></p>
+  <% end %>
+</div>
+
+
+<div class="cards">
+  <div class="card">
+    <p>Apple</p>
+    <p>iPhone 11<p>
+    <p>Full Price: $699</p>
+    <image width="60" height="100" src="https://cdn.tmobile.com/content/dam/t-mobile/en-p/cell-phones/apple/Apple-iPhone-SE/PRODUCT-RED/Apple-iPhone-SE-PRODUCT-RED-thumbnail.png">
+  </div>
+</div>

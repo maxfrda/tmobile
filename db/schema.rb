@@ -10,19 +10,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_08_21_033953) do
+ActiveRecord::Schema.define(version: 2020_08_22_021956) do
 
   create_table "phones", force: :cascade do |t|
     t.string "name"
     t.string "brand"
-    t.integer "price"
-    t.integer "deposit", default: 0
-    t.boolean "trade_in", default: false
-    t.boolean "bogo", default: false
+    t.float "price", default: 0.0
+    t.float "deposit", default: 0.0
+    t.text "trade_in"
+    t.float "bogo", default: 0.0
     t.string "image"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.integer "aal", default: 0
+    t.float "aal", default: 0.0
+    t.boolean "trade_in?", default: false
   end
 
 end
