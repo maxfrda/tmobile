@@ -51,8 +51,6 @@ background: rgb(230,230,230);
   font-weight: 900;
   border: .05rem solid white;
 
-
-
 }
 
 .removable{
@@ -60,7 +58,7 @@ background: rgb(230,230,230);
   font-weight: 100;
 }
 
-/*@media screen and (max-width: 1400px) {
+@media screen and (max-width: 1400px) {
    .row,
    .row-grey{
     font-size: 1rem;
@@ -68,8 +66,48 @@ background: rgb(230,230,230);
    .plans{
     font-size: 1.5rem;
    }
+    .grid-wrapper{
+    padding-left: 1rem;
+    padding-right: 1rem;
+    margin-top: 2rem;
+    }
+    #col-9{
+      display: none;
+    }
 }
-*/
+
+@media screen and (max-width: 1000px) {
+   .row,
+   .row-grey{
+    font-size: 1rem;
+   }
+   .plans{
+    font-size: .7rem;
+    padding: .4rem;
+   }
+   .banner{
+    display: none;
+   }
+    .grid-wrapper{
+    padding-left: 1rem;
+    padding-right: 1rem;
+    margin: 0 auto;
+    }
+    button.calculate{
+      padding: .3rem;
+      font-size: .6rem;
+    }
+    input#input{
+      padding: .3rem;
+    }
+
+  .row,
+  .row-grey{
+    padding: .4rem;
+    font-size: .55rem;
+  }
+}
+
 .column:hover > .minus{
   opacity: 10%;
 
@@ -118,7 +156,7 @@ background: rgb(230,230,230);
   opacity: 100%;
 }
 
-.column.more-plans{
+.more-plans{
   display: inline-block;
   vertical-align: top;
 }
