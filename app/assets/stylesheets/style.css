@@ -204,7 +204,6 @@ background: rgb(230,230,230);
   margin-left: 1rem;
   opacity: 30%;
   transform: scale(.8);
-  padding: top: 1rem;
 }
 
 .fa-plus:hover{
@@ -216,7 +215,6 @@ background: rgb(230,230,230);
   color: #E21673;
   margin-left: 1rem;
   transform: scale(.8);
-  padding: top: 1rem;
 }
 
 .fa-minus:hover{
