@@ -6227,3 +6227,89 @@ Completed 200 OK in 18ms (Views: 9.1ms | ActiveRecord: 3.8ms | Allocations: 8304
   [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
   [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(1664280449204162685)[0m
   [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/api/v1/plans" for ::1 at 2020-08-31 19:46:43 -0400
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::V1::PlansController#index as */*
+  [1m[36mPlan Load (0.7ms)[0m  [1m[34mSELECT "plans".* FROM "plans" ORDER BY created_at DESC[0m
+  ↳ app/controllers/api/v1/plans_controller.rb:6:in `index'
+Completed 200 OK in 19ms (Views: 9.9ms | ActiveRecord: 4.0ms | Allocations: 8322)
+
+
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mPlan Load (0.3ms)[0m  [1m[34mSELECT "plans".* FROM "plans"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlan Destroy (0.3ms)[0m  [1m[31mDELETE FROM "plans" WHERE "plans"."id" = $1[0m  [["id", 29]]
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlan Destroy (0.2ms)[0m  [1m[31mDELETE FROM "plans" WHERE "plans"."id" = $1[0m  [["id", 30]]
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlan Destroy (0.2ms)[0m  [1m[31mDELETE FROM "plans" WHERE "plans"."id" = $1[0m  [["id", 31]]
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlan Destroy (0.2ms)[0m  [1m[31mDELETE FROM "plans" WHERE "plans"."id" = $1[0m  [["id", 32]]
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlan Destroy (0.2ms)[0m  [1m[31mDELETE FROM "plans" WHERE "plans"."id" = $1[0m  [["id", 33]]
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlan Destroy (0.2ms)[0m  [1m[31mDELETE FROM "plans" WHERE "plans"."id" = $1[0m  [["id", 34]]
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlan Destroy (0.2ms)[0m  [1m[31mDELETE FROM "plans" WHERE "plans"."id" = $1[0m  [["id", 35]]
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlan Destroy (0.2ms)[0m  [1m[31mDELETE FROM "plans" WHERE "plans"."id" = $1[0m  [["id", 36]]
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlan Destroy (0.2ms)[0m  [1m[31mDELETE FROM "plans" WHERE "plans"."id" = $1[0m  [["id", 37]]
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlan Destroy (0.2ms)[0m  [1m[31mDELETE FROM "plans" WHERE "plans"."id" = $1[0m  [["id", 38]]
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlan Destroy (0.2ms)[0m  [1m[31mDELETE FROM "plans" WHERE "plans"."id" = $1[0m  [["id", 39]]
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlan Create (0.3ms)[0m  [1m[32mINSERT INTO "plans" ("name", "prices", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Magenta Voice"], ["prices", "---\n:line1: 75\n:line2: 130\n:line3: 155\n:line4: 180\n:line5: 205\n:line6: 230\n:line7: 255\n:line8: 280\n:line9: 310\n:line10: 340\n:line11: 370\n:line12: 400\n"], ["created_at", "2020-08-31 23:54:47.321970"], ["updated_at", "2020-08-31 23:54:47.321970"]]
+  [1m[35m (1.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlan Create (0.3ms)[0m  [1m[32mINSERT INTO "plans" ("name", "prices", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Magenta Plus"], ["prices", "---\n:line1: 90\n:line2: 150\n:line3: 185\n:line4: 220\n:line5: 255\n:line6: 290\n:line7: 325\n:line8: 360\n:line9: 400\n:line10: 440\n:line11: 480\n:line12: 520\n"], ["created_at", "2020-08-31 23:54:47.327566"], ["updated_at", "2020-08-31 23:54:47.327566"]]
+  [1m[35m (1.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlan Create (0.3ms)[0m  [1m[32mINSERT INTO "plans" ("name", "prices", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Essentals Voice"], ["prices", "---\n:line1: 65\n:line2: 100\n:line3: 120\n:line4: 140\n:line5: 160\n:line6: 180\n:line7: N/A\n:line8: N/A\n:line9: N/A\n:line10: N/A\n:line11: N/A\n:line12: N/A\n"], ["created_at", "2020-08-31 23:54:47.333281"], ["updated_at", "2020-08-31 23:54:47.333281"]]
+  [1m[35m (1.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlan Create (0.3ms)[0m  [1m[32mINSERT INTO "plans" ("name", "prices", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Essentals Unlimited 55"], ["prices", "---\n:line1: 45\n:line2: 65\n:line3: N/A\n:line4: N/A\n:line5: N/A\n:line6: N/A\n:line7: N/A\n:line8: N/A\n:line9: N/A\n:line10: N/A\n:line11: N/A\n:line12: N/A\n"], ["created_at", "2020-08-31 23:54:47.339074"], ["updated_at", "2020-08-31 23:54:47.339074"]]
+  [1m[35m (1.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlan Create (0.3ms)[0m  [1m[32mINSERT INTO "plans" ("name", "prices", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Magenta Unlimited 55"], ["prices", "---\n:line1: 55\n:line2: 80\n:line3: N/A\n:line4: N/A\n:line5: N/A\n:line6: N/A\n:line7: N/A\n:line8: N/A\n:line9: N/A\n:line10: N/A\n:line11: N/A\n:line12: N/A\n"], ["created_at", "2020-08-31 23:54:47.345064"], ["updated_at", "2020-08-31 23:54:47.345064"]]
+  [1m[35m (1.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlan Create (0.3ms)[0m  [1m[32mINSERT INTO "plans" ("name", "prices", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Magenta Military"], ["prices", "---\n:line1: 60\n:line2: 90\n:line3: 105\n:line4: 120\n:line5: 135\n:line6: 150\n:line7: 175\n:line8: 200\n:line9: 225\n:line10: 250\n:line11: 275\n:line12: 300\n"], ["created_at", "2020-08-31 23:54:47.350884"], ["updated_at", "2020-08-31 23:54:47.350884"]]
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlan Create (0.3ms)[0m  [1m[32mINSERT INTO "plans" ("name", "prices", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Magenta Military Plus"], ["prices", "---\n:line1: N/A\n:line2: 110\n:line3: 135\n:line4: 160\n:line5: 185\n:line6: 210\n:line7: 245\n:line8: 280\n:line9: 315\n:line10: 350\n:line11: 285\n:line12: 420\n"], ["created_at", "2020-08-31 23:54:47.356425"], ["updated_at", "2020-08-31 23:54:47.356425"]]
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlan Create (0.2ms)[0m  [1m[32mINSERT INTO "plans" ("name", "prices", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Value Essentals Voice"], ["prices", "---\n:line1: N/A\n:line2: N/A\n:line3: N/A\n:line4: 120\n:line5: 145\n:line6: 170\n:line7: N/A\n:line8: N/A\n:line9: N/A\n:line10: N/A\n:line11: N/A\n:line12: N/A\n"], ["created_at", "2020-08-31 23:54:47.361746"], ["updated_at", "2020-08-31 23:54:47.361746"]]
+  [1m[35m (1.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlan Create (0.3ms)[0m  [1m[32mINSERT INTO "plans" ("name", "prices", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Magenta First Responder"], ["prices", "---\n:line1: 60\n:line2: 90\n:line3: 105\n:line4: 120\n:line5: 135\n:line6: 150\n:line7: 165\n:line8: 180\n:line9: 195\n:line10: 210\n:line11: 225\n:line12: 240\n"], ["created_at", "2020-08-31 23:54:47.367261"], ["updated_at", "2020-08-31 23:54:47.367261"]]
+  [1m[35m (1.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlan Create (0.3ms)[0m  [1m[32mINSERT INTO "plans" ("name", "prices", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Magenta First Responder Plus"], ["prices", "---\n:line1: N/A\n:line2: 110\n:line3: 135\n:line4: 160\n:line5: 185\n:line6: 210\n:line7: 235\n:line8: 260\n:line9: 285\n:line10: 310\n:line11: 335\n:line12: 360\n"], ["created_at", "2020-08-31 23:54:47.373300"], ["updated_at", "2020-08-31 23:54:47.373300"]]
+  [1m[35m (1.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlan Create (0.3ms)[0m  [1m[32mINSERT INTO "plans" ("name", "prices", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Magenta 55 Plus"], ["prices", "---\n:line1: N/A\n:line2: 100\n:line3: N/A\n:line4: N/A\n:line5: N/A\n:line6: N/A\n:line7: N/A\n:line8: N/A\n:line9: N/A\n:line10: N/A\n:line11: N/A\n:line12: N/A\n"], ["created_at", "2020-08-31 23:54:47.379312"], ["updated_at", "2020-08-31 23:54:47.379312"]]
+  [1m[35m (1.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(1664280449204162685)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to DropTable (20200831235547)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (10.7ms)[0m  [1m[35mDROP TABLE "phones"[0m
+  [1m[36mprimary::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20200831235547"]]
+  [1m[35m (2.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(1664280449204162685)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
