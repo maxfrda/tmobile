@@ -176,7 +176,7 @@ fir_res_plus.prices = {
 fir_res_plus.save
 
 mag55_plus = Plan.new(name: 'Magenta 55 Plus');
-mag55.prices = {
+mag55_plus.prices = {
   line1: 'N/A',
   line2: 100,
   line3: 'N/A',
