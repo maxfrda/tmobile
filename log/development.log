@@ -375,3 +375,116 @@ Completed 200 OK in 8ms (Views: 0.6ms | ActiveRecord: 0.4ms | Allocations: 3342)
   [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(1664280449204162685)[0m
   [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
 >>>>>>> 69dcbd00adfbede98dabc136514b0fccfcf3dbf4
+Started GET "/" for ::1 at 2020-10-02 15:28:11 -0400
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (Duration: 30.1ms | Allocations: 18335)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 45ms (Views: 41.0ms | ActiveRecord: 0.0ms | Allocations: 29060)
+
+
+Started GET "/" for ::1 at 2020-10-02 15:29:25 -0400
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (Duration: 5.0ms | Allocations: 3837)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 16ms (Views: 11.7ms | ActiveRecord: 0.0ms | Allocations: 9347)
+
+
+Started GET "/" for ::1 at 2020-10-02 15:32:29 -0400
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (Duration: 1.8ms | Allocations: 539)
+[Webpacker] Compiling...
+[Webpacker] Compiled all packs in /home/max/code/maxfrda/tmobile/public/packs
+[Webpacker] Hash: 1f1dcfeed3b4892e6b12
+Version: webpack 4.44.1
+Time: 1072ms
+Built at: 10/02/2020 3:32:31 PM
+                                     Asset      Size       Chunks                         Chunk Names
+        js/0-3b673a739e3b1db8f109.chunk.js  9.18 KiB            0  [emitted] [immutable]  
+    js/0-3b673a739e3b1db8f109.chunk.js.map  8.04 KiB            0  [emitted] [dev]        
+    js/application-52ec6e44e307da3c59f0.js  1.33 MiB  application  [emitted] [immutable]  application
+js/application-52ec6e44e307da3c59f0.js.map  1.38 MiB  application  [emitted] [dev]        application
+        js/classes-e2dc972d747522e35d34.js  6.35 KiB      classes  [emitted] [immutable]  classes
+    js/classes-e2dc972d747522e35d34.js.map  4.84 KiB      classes  [emitted] [dev]        classes
+           js/data-b3f8ffb9f4531be43582.js  9.98 KiB         data  [emitted] [immutable]  data
+       js/data-b3f8ffb9f4531be43582.js.map  8.66 KiB         data  [emitted] [dev]        data
+           js/home-1f9f8187cecb07ee37b7.js  12.7 KiB         home  [emitted] [immutable]  home
+       js/home-1f9f8187cecb07ee37b7.js.map  11.4 KiB         home  [emitted] [dev]        home
+                             manifest.json  1.23 KiB               [emitted]              
+Entrypoint application = js/application-52ec6e44e307da3c59f0.js js/application-52ec6e44e307da3c59f0.js.map
+Entrypoint classes = js/classes-e2dc972d747522e35d34.js js/classes-e2dc972d747522e35d34.js.map
+Entrypoint data = js/data-b3f8ffb9f4531be43582.js js/data-b3f8ffb9f4531be43582.js.map
+Entrypoint home = js/home-1f9f8187cecb07ee37b7.js js/home-1f9f8187cecb07ee37b7.js.map
+[./app/javascript/channels sync recursive _channel\.js$] ./app/javascript/channels sync _channel\.js$ 160 bytes {application} [built]
+[./app/javascript/channels/index.js] 211 bytes {application} [built]
+[./app/javascript/packs/application.js] 850 bytes {application} [built]
+[./app/javascript/packs/classes.js] 2.34 KiB {classes} {data} {home} {0} [built]
+[./app/javascript/packs/data.js] 2.68 KiB {data} {home} {0} [built]
+[./app/javascript/packs/home.js] 2.17 KiB {home} {0} [built]
+[./node_modules/webpack/buildin/global.js] (webpack)/buildin/global.js 905 bytes {application} [built]
+[./node_modules/webpack/buildin/module.js] (webpack)/buildin/module.js 552 bytes {application} [built]
+    + 7 hidden modules
+
+Completed 200 OK in 2450ms (Views: 2448.5ms | ActiveRecord: 0.0ms | Allocations: 5690)
+
+
+Started GET "/" for ::1 at 2020-10-02 15:32:48 -0400
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (Duration: 4.7ms | Allocations: 3837)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 15ms (Views: 10.6ms | ActiveRecord: 0.0ms | Allocations: 9353)
+
+
+Started GET "/" for ::1 at 2020-10-02 15:32:49 -0400
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (Duration: 2.6ms | Allocations: 539)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 19ms (Views: 17.3ms | ActiveRecord: 0.0ms | Allocations: 4419)
+
+
+Started GET "/" for ::1 at 2020-10-02 15:33:34 -0400
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (Duration: 1.6ms | Allocations: 538)
+[Webpacker] Compiling...
+[Webpacker] Compiled all packs in /home/max/code/maxfrda/tmobile/public/packs
+[Webpacker] Hash: 8a5535aaa98bfe4b13a5
+Version: webpack 4.44.1
+Time: 824ms
+Built at: 10/02/2020 3:33:36 PM
+                                     Asset      Size       Chunks                         Chunk Names
+        js/0-fd6db6d6e39a12962389.chunk.js  9.17 KiB            0  [emitted] [immutable]  
+    js/0-fd6db6d6e39a12962389.chunk.js.map  8.03 KiB            0  [emitted] [dev]        
+    js/application-08040424a2d506989615.js  1.33 MiB  application  [emitted] [immutable]  application
+js/application-08040424a2d506989615.js.map  1.38 MiB  application  [emitted] [dev]        application
+        js/classes-e2dc972d747522e35d34.js  6.35 KiB      classes  [emitted] [immutable]  classes
+    js/classes-e2dc972d747522e35d34.js.map  4.84 KiB      classes  [emitted] [dev]        classes
+           js/data-2f5b8604d926bbb23b76.js  9.97 KiB         data  [emitted] [immutable]  data
+       js/data-2f5b8604d926bbb23b76.js.map  8.64 KiB         data  [emitted] [dev]        data
+           js/home-d3554441dbc104af23e3.js  12.7 KiB         home  [emitted] [immutable]  home
+       js/home-d3554441dbc104af23e3.js.map  11.4 KiB         home  [emitted] [dev]        home
+                             manifest.json  1.23 KiB               [emitted]              
+Entrypoint application = js/application-08040424a2d506989615.js js/application-08040424a2d506989615.js.map
+Entrypoint classes = js/classes-e2dc972d747522e35d34.js js/classes-e2dc972d747522e35d34.js.map
+Entrypoint data = js/data-2f5b8604d926bbb23b76.js js/data-2f5b8604d926bbb23b76.js.map
+Entrypoint home = js/home-d3554441dbc104af23e3.js js/home-d3554441dbc104af23e3.js.map
+[./app/javascript/channels sync recursive _channel\.js$] ./app/javascript/channels sync _channel\.js$ 160 bytes {application} [built]
+[./app/javascript/channels/index.js] 211 bytes {application} [built]
+[./app/javascript/packs/application.js] 850 bytes {application} [built]
+[./app/javascript/packs/classes.js] 2.34 KiB {classes} {data} {home} {0} [built]
+[./app/javascript/packs/data.js] 2.67 KiB {data} {home} {0} [built]
+[./app/javascript/packs/home.js] 2.17 KiB {home} {0} [built]
+[./node_modules/webpack/buildin/global.js] (webpack)/buildin/global.js 905 bytes {application} [built]
+[./node_modules/webpack/buildin/module.js] (webpack)/buildin/module.js 552 bytes {application} [built]
+    + 7 hidden modules
+
+Completed 200 OK in 2049ms (Views: 2047.6ms | ActiveRecord: 0.0ms | Allocations: 5691)
+
+

@@ -121,22 +121,22 @@ prices = {
 
 const magMilPlus = new Plan(8, prices);
 
-prices = {
-  line1: 'N/A',
-  line2: 'N/A',
-  line3: 'N/A',
-  line4: 120,
-  line5: 145,
-  line6: 170,
-  line7: 'N/A',
-  line8: 'N/A',
-  line9: 'N/A',
-  line10: 'N/A',
-  line11: 'N/A',
-  line12: 'N/A',
-};
+// prices = {
+//   line1: 'N/A',
+//   line2: 'N/A',
+//   line3: 'N/A',
+//   line4: 120,
+//   line5: 145,
+//   line6: 170,
+//   line7: 'N/A',
+//   line8: 'N/A',
+//   line9: 'N/A',
+//   line10: 'N/A',
+//   line11: 'N/A',
+//   line12: 'N/A',
+// };
 
-const valEssVoice = new Plan(9, prices);
+// const valEssVoice = new Plan(9, prices);
 
 prices = {
   line1: 60,
@@ -190,7 +190,7 @@ prices = {
 const mag55Plus = new Plan(12, prices);
 
 const plans = [firRes, firResPlus, magVoice, magPlus,
-  essVoice, ess55, valEssVoice, mag55, magMil, magMilPlus,
+  essVoice, ess55, mag55, magMil, magMilPlus,
   mag55Plus];
 
 export default plans;
